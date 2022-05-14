@@ -1,0 +1,3715 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    	* {
+		/* background-color: #f4f2f8; */
+        /* background-color: #4d4b4b; */
+        /* background-color: #d0e4e4; */
+      padding: 0;
+    margin: 0;
+    border: 0;
+	}
+    html {
+	scroll-behavior: smooth;
+}
+#profilWrapper {
+    width: 100%;
+    height: 100%;
+    background-color: #4d4b4b;
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  meniu navigare  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#navigationMenu {
+  padding-right: 10px;
+width: 100%;
+height: 60px;
+background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0.6) 70%, rgba(0, 0, 0, 0) 100%);
+float: right;
+z-index: 5;
+
+position: -webkit-sticky;
+	position: sticky;
+	top: -12px;
+}
+
+.adreseMeniu {
+    position: relative;
+    color: #d9e6ff;
+    display: block;
+    float: right;
+    padding:0 15px;
+    margin-top: 18px;
+    margin-right: 20px;
+    font-size: 17px;
+}
+.adreseMeniu:hover {
+    color: white; 
+transform: scale(1.1);
+transition: .6;
+cursor: pointer;
+}
+
+
+#containerDayNight {
+    position: relative;
+    float: left;
+    margin-left: 20px;
+    top: 12px;
+}
+
+#changeSite {
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-weight: bold;
+    position: absolute;
+    display: inline;
+    width: 95px;
+    height: 36px;
+    border: 2px solid  #52450f;
+    border-radius: 20px;
+}
+#changeSite:hover {
+    cursor: pointer;
+}
+#textDay {
+    display: inline;
+}
+
+#textDay p {
+    position: absolute;
+    font-size: 15px;
+    color:#ffcc00;
+    text-shadow: 1px 1px 2px black;
+    left: 11px;
+    top: 2px;
+    text-align: center;
+}
+#textNight p {
+    position: absolute;
+    font-size: 14px;
+    color:rgb(248, 248, 225);
+    text-shadow: 1px 1px 2px black;
+    right: 11px;
+    top: 3px;
+    text-align: center;
+}
+#textNight{
+    display: none;
+}
+
+#rotundDayNight {
+    position: absolute;
+    top: 3px;
+    left: 63px;
+    width: 23px;
+    height: 23px;
+    background-color: rgb(205, 236, 236);
+    border-radius: 50%;
+    border: 5px solid rgb(250, 250, 248);
+    background: url(images/soare.jpg);
+    background-size: 100% 100%;
+    box-shadow: 0 0 14px yellow;
+    z-index: 5;
+}
+/* animatie luna */
+@keyframes cercSpreStanga {
+	0% {
+        left: 62px;
+	}
+
+	100% {
+        left: 4px;
+	}
+}
+/* animatie soare */
+@keyframes cercSpreDreapta {
+	0% {
+        left: 4px;
+	}
+
+	100% {
+        left: 62px;
+	}
+}
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  dropdown menu ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.projects:hover #submenuProjects{
+    /* display: block; */
+    display: block;
+}
+.submenuArrow {
+    position: absolute;
+    width: 90%;
+    left: 0;
+    top: 2px;
+    height: 10px;
+    background-color: rgb(170, 187, 241);
+    -webkit-clip-path: polygon(0% 81%, 28% 52%, 32% 23%, 36% 52%, 100% 77%, 37% 78%, 32% 47%, 28% 77%);
+clip-path: polygon(0% 81%, 28% 52%, 32% 23%, 36% 52%, 100% 77%, 37% 78%, 32% 47%, 28% 77%);
+}
+
+#submenuProjects {
+    position: absolute;
+    text-align: left;
+    padding-top: 10px;
+    margin-left: -20px;
+    /* background-color: rgba(0,0, 0.1); */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0.6) 70%, rgba(0, 0, 0, 0.5) 100%);
+    display: none;
+    white-space: nowrap;
+    box-shadow: 0px 4px 13px 0px rgba(0,0,0,0.5);
+    z-index: 9;
+}
+
+#submenuProjects span {
+    padding: 12px 20px 10px 15px;
+    background-color: rgb(0,0,0, .5);
+    color: #d9e6ff;
+    display: block;
+}
+#submenuProjects span:hover {
+    /* color: rgb(150, 172, 243); */
+    color: white;
+    cursor: pointer;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   imagine, text profil si imagine back top ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#profilContainer {
+  position: relative;
+  width: 100%;
+  height: 37rem;
+  background: url(images/top2.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  z-index: 0;
+  filter: drop-shadow(0 0px 5px rgb(41, 40, 40));
+
+}
+
+#wrapperPozaProfil {
+    filter: drop-shadow(5px 3px 7px rgb(48, 47, 47));
+}
+
+#pozaProfil {
+  position: relative;
+  margin-top: 17px;
+ right: 5%;
+  float: right;
+  width: 27rem;
+  height: 36rem;
+border-bottom-left-radius: 100% 40%;
+  border-bottom-right-radius: 100% 40%;
+  border-top-left-radius: 100% 40%;
+  border-top-right-radius: 100% 40%;
+  background: url(images/eu3.png);
+    background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+}
+
+/*~text profil*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#textProfil {
+  position: absolute;
+  top: 300px;
+ right: 500px;
+ color: white;
+ text-align: center;
+ display: inline;
+ /*background-color: grey;*/
+/* transform: rotate(-2deg); */
+}
+#textProfil h1 {
+  /* font-family: Calibri, Monaco; */
+  /* font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+
+
+  /* font-family: 'Farsan'; */
+  /* font-family: 'MedievalSharp'; */
+  /* font-family: Chalkduster; */
+  font-family: Gabriola;
+
+
+  letter-spacing: 6px;
+  font-size: 37px;
+  text-shadow: 1px 1px 5px black;
+  /* transform: rotate(6.5deg); */
+  /*background-color: rgba(255, 255, 255, 0.2);*/
+/*       background: radial-gradient(ellipse closest-side,
+      rgba(255, 255, 255, 0.2) 60%, transparent);*/
+/*background: linear-gradient(to right, rgba(255, 255, 255, 0.5) 0%, transparent 100%);*/
+}
+#textProfil h3 {
+  /*font-family: ;*/
+padding-top: 20px; 
+/* transform: rotate(4deg); */
+/*background-color: grey;*/
+}
+
+
+
+#aboutMeContainer {
+    position: relative;
+    /* top: -10px; */
+    width: 100%;
+    height: 400px;
+    background: url(images/top22.jpg);
+    /* background-size: 100%; */
+    /* background-position: top; */
+
+
+  margin: 0 auto;
+
+  /* height: 44rem; */
+  background-size: cover;
+    /* position: relative;
+  margin: 0 auto;
+  width: 100%;
+  height: 44rem;
+  background: url(images/top21.jpg);
+  background-size: 100% 100%; */
+  z-index: 0;
+  opacity: .1;
+}
+#aboutMeContainer::before {
+         /* background-image: linear-gradient(to top,#4d4b4b 0%, transparent 30%, #4d4b4b 100%); */
+         background-size: cover;
+         content: "";
+         display: block;
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         z-index: -2;
+         }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  about me hexagoane si texte  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#wrapperAboutMe {
+    /* border: 1px solid blue; */
+    position: relative;
+    margin-top: 20px;
+    padding-top: 100px;
+    /* margin-bottom: 100px; */
+    /* padding-top: 300px; */
+    width: 95%;
+    margin-left: 4%;
+    float: left;
+    /* filter: drop-shadow(0 0px 5px rgb(17, 17, 17)); */
+
+}
+#titluTextAboutMe {
+    position: absolute;
+    font-size: 30px;
+    color: white;
+    /* text-shadow: 1px 1px 3px rgb(18, 18, 19); */
+    /* left: 160; */
+    margin-left: 50px;
+    top: -40px;
+    padding-top: 100px;
+    white-space: nowrap;
+}
+
+.textAboutMe {
+    font-size: 25px;
+    line-height: 28px;
+    color: white;
+    position: relative;
+float: left;
+padding: 10px 35px;
+margin-right: 30px;
+margin-top: 30px;
+text-shadow: 1px 1px 3px black;
+/* background: linear-gradient(to right,transparent 0%, rgba(255, 255, 255, 0.3) 25%,rgba(255, 255, 255, 0.5) 70%, transparent 100%); */
+background: linear-gradient(to right,transparent 0%, #595959 40%,#595959 55%, transparent 100%);
+/* box-shadow: 0 2px 5px black; */
+    /* text-shadow: 1px 1px 1px grey; */
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   proiecte personale  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#projectsContainer {
+    position: relative;
+    /* float: left; */
+    display: inline-block;
+    /* border: 1px solid cyan;   */
+    /* display: inline; */
+    /* margin-left: 100px; */
+    width: 100%;
+    /* margin: 0 auto; */
+    margin: 150px auto 0 auto;
+}
+
+#titluProiecte, #titluAbilitati {
+    color: white;
+    font-size: 28px;
+    display: inline-block;
+    margin-left: 15%;
+    /* top: 50px; */
+    /* margin-top: 50px; */
+    padding-top: 50px;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px black;
+    /* border: 1px solid cyan; */
+}
+
+.containerDevices {
+    height: 8cm;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translate(-50%);
+    /* border: 1px solid green; */
+    background-color: transparent;
+    /* filter: drop-shadow(0 0px 7px rgb(34, 33, 33)); */
+}
+/* .WrapperImagineLaptop {
+    filter: drop-shadow(0 0px 7px rgb(34, 33, 33));
+} */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  laptop  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.imagineLaptop {
+    position: absolute;
+    left: -450px;
+    width: 9cm;
+    height: 5cm;
+    background: url(deviceImages/laptop2.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 2;
+    box-shadow: 0 9px 6px -6px black;
+    filter: drop-shadow(0 0px 7px rgb(34, 33, 33));
+    /* border: 1px solid blue; */
+    -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0.0) 55%, rgba(0,0,0,0.2));
+}
+.imagineLaptop:hover {
+    transform: scale(1.5) translateY(-.8cm);
+    transition: .4s;
+}
+.imagineProiectLaptop {
+    position: absolute;
+    overflow: hidden;
+    left: 50%;
+    transform: translate(-50%);
+    top: .15cm;
+    width: 6.95cm;
+    height: 3.95cm;
+    border-radius: 4px;
+    background-color: #4d4b4b;
+}
+#imagineLaptopReact {
+    background: url(projectsImages/reactImages/laptopReact2.jpg);
+    background-size: 100% 115%;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  animatie device ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.imagineProiectLaptop > div {
+  height: 1000px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* transform: translate3d(0, 0, 0); */
+}
+
+/* .imagineProiectLaptop .childLaptop,  .childMonitor, .childTableta  {
+   animation: imageAnimation 30s linear infinite;
+}
+
+@keyframes imageAnimation {
+
+  100% { 
+    transform: translateY(-66.6666%);  
+  }
+} */
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  monitor  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.imagineMonitor {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 12cm;
+    height: 8.5cm;
+    margin-top: -3.5cm;
+    background: url(deviceImages/monitor2.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 1;
+    -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0.0) 70%, rgba(0,0,0,0.3));
+    filter: drop-shadow(0 0px 6px rgb(34, 33, 33));
+}
+.imagineMonitor:hover {
+    z-index: 2;
+    transform: scale(1.3) translateY(-1cm) translateX(-4.5cm);
+    transition: .4s;
+}
+
+.imagineProiectMonitor {
+    position: absolute;
+    overflow: hidden;
+    left: 50%;
+    transform: translate(-50%);
+    top: .3cm;
+    width: 11.3cm;
+    height: 6.3cm;
+    border-radius: 8px;
+    background-color: #4d4b4b;
+}
+.imagineProiectMonitor > div {
+  height: 1000px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* transform: translate3d(0, 0, 0); */
+}
+
+#imagineMonitorReact  {
+    background: url(projectsImages/reactImages/reactMonitor4.jpg);
+    background-size: 100% 100%;
+}
+
+.efectUmbraMonitor {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: -.4cm;
+    width: 3.9cm;
+    height: 14px;
+    /* background-color: yellow; */
+    -webkit-clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+    /* box-shadow: 0 9px 6px -6px black; */
+    background: linear-gradient(to bottom, #222020 0%, rgba(255, 255, 255, 0) 70%);
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  telefon  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.imagineTelefon {
+    position: absolute;
+    left: 110px;
+    top: 1cm;
+    width: 2cm;
+    height: 4cm;
+    background: url(deviceImages/telefon2.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 1;
+    box-shadow: 0 7px 6px -7px black;
+    filter: drop-shadow(0 1px 5px rgb(34, 33, 33));
+    -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0.0) 65%, rgba(0,0,0,0.2));
+}
+
+.imagineTelefon:hover {
+    transform: scale(1.3) translateY(-.45cm);
+    transition: .4s;
+    z-index: 2;
+}
+.imagineTelefon:hover .VsoonText {
+    display: inline;
+}
+.imagineProiectTelefon {
+    position: absolute;
+    overflow: hidden;
+    left: 50%;
+    transform: translate(-50%);
+    top: .3cm;
+    width: 1.9cm;
+    height: 3.23cm;
+    /* border-radius: 6px; */
+    background-color: #4d4b4b;
+}
+.imagineProiectTelefon > div {
+  height: 1000px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* transform: translate3d(0, 0, 0); */
+}
+#imagineTelefonReact > div {
+    /* background: url(images/picturi2.jpg);
+    background-size: 100% 50%; */
+}
+.soonText {
+    color: rgb(50, 134, 160);
+    text-align: center;
+    margin-top: 50%;
+    text-shadow: 1px 1px 2px rgb(39, 39, 39);
+}
+.VsoonText {
+    position: absolute;
+    color: rgb(50, 134, 160);
+    text-align: center;
+    margin-top: 15%;
+    margin-left: 3px;
+    /* font-size: 13px; */
+    font-size: .34cm;
+    /* font-size: calc((5vw - .5rem) / 9); */
+    /* white-space: nowrap; */
+    text-shadow: 1px 1px 2px rgb(39, 39, 39);
+    display: none;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  tableta  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.imagineTableta {
+    position: absolute;
+    left: 200px;
+    top: .95cm;
+    width: 6.5cm;
+    height: 4cm;
+    background: url(deviceImages/tableta.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 1;
+    box-shadow: 0 9px 6px -6px black;
+    filter: drop-shadow(0 0px 12px rgb(34, 33, 33));
+    -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0.0) 50%, rgba(0,0,0,0.2));
+}
+
+.imagineTableta:hover {
+    /* transform: scale(2);
+    -moz-transform: scale(2);
+    transition: .6s;
+    margin-top: -1.9cm; */
+    transform: scale(1.4) translateY(-.55cm);
+    transition: .4s;
+}
+.imagineProiectTableta {
+    position: absolute;
+    overflow: hidden;
+    left: 50%;
+    transform: translate(-50%);
+    top: .45cm;
+    width: 5.5cm;
+    height: 3.1cm;
+    /* border-radius: 6px; */
+    background-color: #4d4b4b;
+}
+.imagineProiectTableta > div {
+  height: 1000px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* transform: translate3d(0, 0, 0); */
+}
+
+#imagineTabletaReact > div {
+    background: url(projectsImages/reactImages/tabletaReact.jpg);
+    background-size: 100% 20%;
+}
+
+.imagineProiectTableta .childTablet:hover {
+   animation: reactTabletAnimation 3s linear infinite;
+}
+
+@keyframes reactTabletAnimation {
+10% {
+    transform: translateY(0); 
+}
+/* 70% {
+    transform: translateY(-4%); 
+} */
+80% { 
+  transform: translateY(-5%);  
+}
+100% { 
+  transform: translateY(-5%);  
+}
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  titlu proiecte si texte ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+.textProiecte {
+    position: relative;
+}
+
+#titluDevices {
+    position: absolute;
+    margin-top: -100px;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 45px;
+    letter-spacing: 5px;
+    text-indent: 50px;
+    font-weight: bold;
+    white-space: nowrap;
+    color:rgb(108, 183, 248);
+    text-shadow: 2px 0px 6px #0a0a0a;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-box-reflect: below -17px linear-gradient(to bottom, rgba(0,0,0,0.0) 35%, rgba(0,0,0,0.3));
+    z-index: 3;
+}
+#titluDevices:hover {
+    color:rgb(46, 126, 197);
+}
+
+.textDevices {
+    position: relative;
+    max-width: 70%;
+    font-size: 23px;
+    color:rgb(182, 213, 241);
+    margin: 70px auto ;
+    text-indent: 50px;
+    z-index: 1;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   animatie React project  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.imagineReact {
+    position: absolute;
+    width: 170px;
+    height: 150px;
+    background: url(projectsImages/reactImages/react.png);
+    background-size: 100% 100%;
+    top: -270px;
+    left: -350px;
+    animation: reactAnimation 20s linear infinite;
+}
+.imagineReactOglinda {
+    position: absolute;
+    width: 170px;
+    height: 150px;
+    background: url(projectsImages/reactImages/react.png);
+    background-size: 100% 100%;
+    top: -100px;
+    opacity: .2;
+    left: -350px;
+    animation: reactAnimation2 20s linear infinite;
+    z-index: 0;
+}
+#imagineReactOglindaObturator {
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    top: -100px;
+    z-index: 1;
+        left: -350px;
+    animation: reactAnimation3 20s linear infinite;
+     background: linear-gradient(to bottom, rgba(169,208,113,0) 0%,  #4d4b4b 30%) ;
+}
+
+@keyframes reactAnimation {
+  100% { 
+    transform: translateX(105vw) rotate(1080deg) scaleY(1);  
+  }
+}
+
+@keyframes reactAnimation2 {
+  100% { 
+    transform: translateX(105vw) rotate(-1080deg) scaleY(1);  
+  }
+}
+@keyframes reactAnimation3 {
+  100% { 
+    transform: translateX(105vw);  
+  }
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  picturi in ulei project  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#proiectReact, #proiectPicturi, #proiectCommerce, #proiectColors, #proiectModel, #proiectCV {
+    padding: 200px 0 100px 0;
+}
+
+#imagineLaptopPicturi > div {
+    background: url(projectsImages/picturiImages/monitorPicturi.jpg);
+    background-size: 100% 60%;
+}
+
+#imagineLaptopPicturi .childLaptopPicturi:hover {
+    /* -webkit-animation:picturiLaptopAnimation 10s linear infinite;
+   animation: picturiLaptopAnimation 10s linear infinite; */
+}
+
+@keyframes picturiLaptopAnimation {
+10% {
+    transform: translateY(0); 
+}
+
+90% {
+    transform: translateY(-45%); 
+}
+100% { 
+  transform: translateY(-45%);  
+}
+}
+
+#imagineMonitorPicturi > div {
+    background: url(projectsImages/picturiImages/monitorPicturi.jpg);
+    background-size: 100% 90%;
+}
+#imagineMonitorPicturi .childMonitorPicturi:hover {
+    /* -webkit-animation: picturiMonitorAnimation 10s linear infinite;
+   animation: picturiMonitorAnimation 10s linear infinite; */
+}
+
+@keyframes picturiMonitorAnimation {
+10% {
+    transform: translateY(0); 
+}
+
+90% {
+    transform: translateY(-66%); 
+}
+100% { 
+  transform: translateY(-66%);  
+}
+}
+
+
+#imagineTelefonPicturi > div {
+    background: url(projectsImages/picturiImages/picturi2.jpg);
+    background-size: 100% 50%;
+}
+#imagineTelefonPicturi .childTelefonPicturi:hover {
+   /* animation: picturiTelefonAnimation 10s linear infinite; */
+}
+
+@keyframes picturiTelefonAnimation {
+10% {
+    transform: translateY(0); 
+}
+
+90% {
+    transform: translateY(-37%); 
+}
+100% { 
+  transform: translateY(-37%);  
+}
+}
+
+#imagineTabletaPicturi > div {
+    background: url(projectsImages/picturiImages/monitorPicturi.jpg);
+    background-size: 100% 50%;
+}
+#imagineTabletaPicturi .childTabletaPicturi:hover {
+    /* -webkit-animation: picturiTabletaAnimation 10s linear infinite;
+   animation: picturiTabletaAnimation 10s linear infinite; */
+}
+
+@keyframes picturiTabletaAnimation {
+10% {
+    transform: translateY(0); 
+}
+
+90% {
+    transform: translateY(-37%); 
+}
+100% { 
+  transform: translateY(-37%);  
+}
+}
+
+
+.imaginePenson {
+    position: absolute;
+    width: 45%;
+    height: 1.5vw;
+    background: url(projectsImages/picturiImages/penson1.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 3;
+    top: -70px;
+    left: -150px;
+    transform: rotate(-10deg);
+    -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0.0) 25%, rgba(0,0,0,0.4));
+}
+.titluPicturi {
+-webkit-box-reflect: below -18px linear-gradient(to bottom, rgba(0,0,0,0.0) 35%, rgba(0,0,0,0.3))!important ; 
+}
+.titluPicturi a {
+    text-decoration: none;
+}
+.titluPicturi a:hover {
+    color: rgb(57, 132, 202);
+    /* rgb(62, 131, 196) */
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  E-Commerce project  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#imagineLaptopCommerce > div {
+    background: url(projectsImages/commerce/commerceLaptop.jpg);
+    /* background-size: 100% 50%; */
+    background-size: 100% 50%;
+}
+#imagineLaptopCommerce .childLaptopCommerce:hover {
+    -webkit-animation: commerceLaptopAnimation 10s linear infinite;
+   animation: commerceLaptopAnimation 10s linear infinite;
+}
+
+@keyframes commerceLaptopAnimation {
+10% {
+    transform: translateY(0); 
+}
+/* 90% {
+    transform: translateY(-83%); 
+} */
+90% {
+    transform: translateY(-35%); 
+}
+100% { 
+  transform: translateY(-35%);  
+}
+}
+
+#imagineMonitorCommerce > div {
+    background: url(projectsImages/commerce/commerceMonitor.jpg);
+    background-size: 100% 90%;
+}
+#imagineMonitorCommerce .childMonitorCommerce:hover {
+    -webkit-animation: commerceMonitorAnimation 15s linear infinite;
+   animation: commerceMonitorAnimation 15s linear infinite;
+}
+
+@keyframes commerceMonitorAnimation {
+7% {
+    transform: translateY(0); 
+}
+/* 90% {
+    transform: translateY(-83%); 
+} */
+90% {
+    transform: translateY(-66.2%); 
+}
+100% { 
+  transform: translateY(-66.2%);  
+}
+}
+
+/* #imagineTelefonCommerce > div {
+    background: url(images/picturi2.jpg);
+    background-size: 100% 50%;
+} */
+#imagineTabletaCommerce > div {
+    background: url(projectsImages/commerce/commerceTableta.jpg);
+    background-size: 100% 50%;
+}
+#imagineTabletaCommerce .childTabletaCommerce:hover {
+    -webkit-animation: commerceTabletaAnimation 10s linear infinite;
+   animation: commerceTabletaAnimation 10s linear infinite;
+}
+
+@keyframes commerceTabletaAnimation {
+10% {
+    transform: translateY(0); 
+}
+/* 90% {
+    transform: translateY(-83%); 
+} */
+90% {
+    transform: translateY(-38.3%); 
+}
+100% { 
+  transform: translateY(-38.3%);  
+}
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  Prospetime si culoare  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#imagineLaptopCulorile > div {
+    background: url(projectsImages/culorile/culoriLaptop.jpg);
+    background-size: 100%;
+    /* background-size: 100% 150%; */
+}
+#imagineLaptopCulorile .childLaptopColors:hover {
+    /* -webkit-animation: culorileLaptopAnimation 15s linear infinite;
+   animation: culorileLaptopAnimation 15s linear infinite; */
+}
+
+@keyframes culorileLaptopAnimation {
+10% {
+    transform: translateY(0); 
+}
+
+90% {
+    transform: translateY(-85%); 
+}
+100% { 
+  transform: translateY(-85%);  
+}
+}
+
+#imagineMonitorCulorile > div {
+    background: url(projectsImages/culorile/culorileMonitor.jpg);
+    background-size: 100% 60%;
+}
+#imagineMonitorCulorile .childMonitorColors:hover {
+    /* -webkit-animation: culorileMonitorAnimation 10s linear infinite;
+   animation: culorileMonitorAnimation 10s linear infinite; */
+}
+
+@keyframes culorileMonitorAnimation {
+10% {
+    transform: translateY(0); 
+}
+
+90% {
+    transform: translateY(-36%); 
+}
+100% { 
+  transform: translateY(-36%);  
+}
+}
+
+#imagineTelefonCulorile > div {
+    background: url(projectsImages/culorile/culorileTelefon.jpg);
+    background-size: 100% 50%;
+}
+#imagineTelefonCulorile .childTelefonColors:hover {
+   /* animation: culorileTelefonAnimation 10s linear infinite; */
+}
+
+@keyframes culorileTelefonAnimation {
+10% {
+    transform: translateY(0); 
+}
+
+90% {
+    transform: translateY(-38%); 
+}
+100% { 
+  transform: translateY(-38%);  
+}
+}
+
+#imagineTabletaCulorile > div {
+    background: url(projectsImages/culorile/culorileTableta.jpg);
+    background-size: 100% 80%;
+}
+#imagineTabletaCulorile .childTabletaColors:hover {
+    /* -webkit-animation: culorileTabletaAnimation 10s linear infinite;
+   animation: culorileTabletaAnimation 10s linear infinite; */
+}
+
+@keyframes culorileTabletaAnimation {
+10% {
+    transform: translateY(0); 
+}
+
+90% {
+    transform: translateY(-68%); 
+}
+100% { 
+  transform: translateY(-68%);  
+}
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  U - Model  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#imagineLaptopModel > div {
+    background: url(projectsImages/model/laptopModel.jpg);
+    background-size: 100% 70%;
+}
+#imagineLaptopModel .childLaptopModel:hover {
+    -webkit-animation: modelLaptopAnimation 15s linear infinite;
+   animation: modelLaptopAnimation 15s linear infinite;
+}
+
+@keyframes modelLaptopAnimation {
+10% {
+    transform: translateY(0); 
+}
+
+90% {
+    transform: translateY(-55%); 
+}
+100% { 
+  transform: translateY(-55%);  
+}
+}
+
+#imagineMonitorModel > div {
+    background: url(projectsImages/model/monitorModel.jpg);
+    background-size: 100% 70%;
+}
+#imagineMonitorModel .childMonitorModel:hover {
+    -webkit-animation: modelMonitorAnimation 10s linear infinite;
+   animation: modelMonitorAnimation 10s linear infinite;
+}
+
+@keyframes modelMonitorAnimation {
+10% {
+    transform: translateY(0); 
+}
+
+90% {
+    transform: translateY(-47%); 
+}
+100% { 
+  transform: translateY(-47%);  
+}
+}
+
+#imagineTelefonModel > div {
+    /* background: url(projectsImages/model/tabletaModel.jpg); */
+    background-size: 100% 50%;
+}
+
+
+#imagineTabletaModel > div {
+    background: url(projectsImages/model/tabletaModel.jpg);
+    background-size: 100% 70%;
+}
+#imagineTabletaModel .childTabletaModel:hover {
+    -webkit-animation: modelTabletaAnimation 15s linear infinite;
+   animation: modelTabletaAnimation 15s linear infinite;
+}
+
+@keyframes modelTabletaAnimation {
+10% {
+    transform: translateY(0); 
+}
+
+90% {
+    transform: translateY(-58%); 
+}
+100% { 
+  transform: translateY(-58%);  
+}
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  CV  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#imagineLaptopCV > div {
+    background: url(projectsImages/CV/laptopCV.jpg);
+    background-size: 100% 40%;
+}
+#imagineLaptopCV .childLaptopCV:hover {
+    -webkit-animation: cvLaptopAnimation 10s linear infinite;
+   animation: cvLaptopAnimation 10s linear infinite;
+}
+
+@keyframes cvLaptopAnimation {
+10% {
+    transform: translateY(0); 
+}
+
+90% {
+    transform: translateY(-25%); 
+}
+100% { 
+  transform: translateY(-25%);  
+}
+}
+
+#imagineMonitorCV > div {
+    background: url(projectsImages/CV/monitorCV.jpg);
+    background-size: 100% 50%;
+}
+#imagineMonitorCV .childMonitorCV:hover {
+   animation: cvMonitorAnimation 10s linear infinite;
+}
+
+@keyframes cvMonitorAnimation {
+10% {
+    transform: translateY(0); 
+}
+
+90% {
+    transform: translateY(-27%); 
+}
+100% { 
+  transform: translateY(-27%);  
+}
+}
+
+#imagineTelefonCV > div {
+    background: url(projectsImages/CV/telefonCV.jpg);
+    background-size: 100% 20%;
+}
+#imagineTelefonCV .childTelefonCV:hover {
+    -webkit-animation: cvTelefonAnimation 6s linear infinite;
+   animation: cvTelefonAnimation 6s linear infinite;
+}
+
+@keyframes cvTelefonAnimation {
+15% {
+    transform: translateY(0); 
+}
+
+90% {
+    transform: translateY(-8%); 
+}
+100% { 
+  transform: translateY(-8%);  
+}
+}
+
+#imagineTabletaCV > div {
+    background: url(projectsImages/CV/laptopCV.jpg);
+    background-size: 100% 35%;
+}
+#imagineTabletaCV .childTabletCV:hover {
+    -webkit-animation: cvTabletaAnimation 10s linear infinite;
+   animation: cvTabletaAnimation 10s linear infinite;
+}
+
+@keyframes cvTabletaAnimation {
+10% {
+    transform: translateY(0); 
+}
+
+90% {
+    transform: translateY(-23.5%); 
+}
+
+100% { 
+  transform: translateY(-23.5%);  
+}
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   aptitudini  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+#wrapperAptitudini {
+    position: relative;
+    padding-top: 100px;
+    /* border: 1px solid black; */
+    /* margin-bottom: 100px; */
+}
+
+/* setari poze pt toate sectiile */
+.pozaKeySkills , .pozaAbilitatiSoftware, .pozaSoftSkills, .pozaLearning, .pozaBooks, .pozaEducatia{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background-image: url(images/aptitudini/key.png);
+    background-size: 100% 100%;
+    margin-top: -5px;
+    transition: .4s ease-out;
+    margin-left: 2rem;
+    /* border: 1px solid yellow; */
+}
+#aptitudiniText, #textAbilitatiInterpersonale, #textAbilitatiSoftware, #textEducatia, #titluCourses, #textBooks {
+    margin-left: 4.5rem;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color:rgb(127, 200, 224);
+    text-shadow: 1px 1px 2px rgb(14, 13, 13);
+}
+#containerBooks {
+    margin-left: 12rem;
+    margin-top: -50px;
+    margin-bottom: 100px;
+}
+
+.containerAptitudini {
+    margin-left: 7rem;
+    position: relative;
+    margin-bottom: 50px;
+    margin-top: -30px;
+}
+
+
+.containerAbilitatiSoftware b {
+    color: #bad1ff;
+    font-size: 20px;
+    margin-left: 29px;
+}
+
+.containerAptitudini:hover .pozaKeySkills {
+    transform: scale(1.2);
+}
+
+.textAptitudiniPrincipale {
+    padding-bottom: 18px;
+    margin-left: 35px;
+}
+
+ul li {
+    font-size: 18px;
+    line-height: 25px;
+    list-style: none;
+    padding-bottom: 8px;
+    color:rgba(230, 219, 219, 0.6)
+}
+
+.sageataText {
+    position: relative;
+    float: left;
+    top: -40px;
+    left: 15px;
+    animation: apareSageata 2s forwards;
+    opacity: 0;
+}
+.baraSageataSus {
+    position: absolute;
+    left: -20px;
+    top: 7px;
+    transform: rotate(25deg);
+    width: 10px;
+    height: 1.5px;
+    background-color: rgb(35, 69, 172);
+    box-shadow: 0px 2px 6px black;
+}
+.baraSageataJos {
+    position: absolute;
+    left: -30px;
+    top: 13px;
+    transform: rotate(-25deg);
+    width: 20px;
+    height: 1.5px;
+    background-color: rgb(24, 35, 70);
+    box-shadow: -2px 2px 6px black;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  animatii pentru sageti aptitudini  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.unu{
+    animation: apareSageataFataText 1s forwards; 
+}
+@keyframes apareSageataFataText {
+
+10% {
+    opacity: 0;
+}
+20% {
+    transform: translateY(63px);
+    opacity: 0.5;
+}
+
+100% { 
+    transform: translateY(63px) translateX(25px);
+  opacity: 1;
+}
+}
+
+.doi{
+    animation: apareSageataFataText 1s forwards;
+    animation-delay: .3s; 
+}
+
+.trei{
+    animation: apareSageataFataText 1s forwards; 
+    animation-delay: .6s;
+}
+
+.patru{
+    animation: apareSageataFataText 1s forwards; 
+    animation-delay: .9s;
+}
+
+.cinci{
+    animation: apareSageataFataText 1s forwards; 
+    animation-delay: 1.2s;
+}
+
+.sase{
+    animation: apareSageataFataText 1s forwards; 
+    animation-delay: 1.5s;
+}
+
+/* setari pentru celelalte texte */
+.sapte{
+    animation: apareSageataFataText 1s forwards; 
+    animation-delay: 1.8s;
+}
+.opt{
+    animation: apareSageataFataText 1s forwards; 
+    animation-delay: 2.1s;
+}
+.noua{
+    animation: apareSageataFataText 1s forwards; 
+    animation-delay: 2.4s;
+}
+.zece{
+    animation: apareSageataFataText 1s forwards; 
+    animation-delay: 2.7s;
+}
+.unusprezece{
+    animation: apareSageataFataText 1s forwards; 
+    animation-delay: 3s;
+}
+
+.doisprezece{
+    animation: apareSageataFataText 1s forwards; 
+    animation-delay:3.3s;
+}
+
+.textAptitudini {
+    /* border: 1px solid green; */
+    position: relative;
+    color:rgb(182, 213, 241);
+    display: block;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: 40px;
+    opacity: 0;
+}
+.textCourses {
+    position: relative;
+    color:rgb(182, 213, 241);
+    /* display: block; */
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: 40px;
+    /* opacity: 0; */
+}
+
+.plusCourses {
+    position: absolute;
+    left: -35px;
+    font-size: 23px;
+    /* background : rgb(70, 69, 69); */
+    padding: 0 7px; 
+    border-radius: 50%; 
+    box-shadow: 0 2px 4px rgb(36, 34, 34);
+}
+.plusCourses:hover{
+    cursor: pointer;
+    color: white;
+    /* transform: scale(1.1);   */
+}
+#cuprinsCursuriUnu, #cuprinsCursuriDoi, #cuprinsCursuriTrei, #cuprinsCursuriPatru, #cuprinsCursuriCinci, #cuprinsCursuriSase { 
+    color: white;
+    position: absolute;
+    /* display:none; */
+    margin: 10px 100px;
+    height: 0px;
+    overflow: hidden;
+}
+
+/* animatii texte aptitudini */
+
+.aptitudiniUnu {
+    animation: apareTextDescriere .5s forwards; 
+    animation-delay: .3s;
+}
+@keyframes apareTextDescriere {
+90% {
+    opacity: 0;
+}
+
+100% { 
+  opacity: 1;
+}
+}
+
+.aptitudiniDoi {
+    animation: apareTextDescriere .5s forwards; 
+    animation-delay: .5s;
+}
+
+
+.aptitudiniTrei {
+    animation: apareTextDescriere .5s forwards; 
+    animation-delay: .8s;
+}
+
+
+.aptitudiniPatru {
+    animation: apareTextDescriere .5s forwards; 
+    animation-delay: 1.1s;
+}
+
+
+.aptitudiniCinci {
+    animation: apareTextDescriere .5s forwards; 
+    animation-delay: 1.4s;
+}
+
+/* setari valabile pentru toate textele care apar cu sageata in fata */
+
+.aptitudiniSase {
+    animation: apareTextDescriere .5s forwards; 
+    animation-delay: 1.7s;
+}
+
+
+.aptitudiniSapte {
+    animation: apareTextDescriere .5s forwards; 
+    animation-delay: 2s;
+}
+
+
+.aptitudiniOpt {
+    animation: apareTextDescriere .5s forwards; 
+    animation-delay: 2.3s;
+}
+
+
+.aptitudiniNoua {
+    animation: apareTextDescriere .5s forwards; 
+    animation-delay: 2.7s;
+}
+
+.aptitudiniZece {
+    animation: apareTextDescriere .5s forwards; 
+    animation-delay: 3s;
+}
+
+.aptitudiniUnusprezece {
+    animation: apareTextDescriere .5s forwards; 
+    animation-delay: 3.3s;
+}
+
+.aptitudiniDoisprezece {
+    animation: apareTextDescriere .5s forwards; 
+    animation-delay: 3.6s;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  abilitati software ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.pozaAbilitatiSoftware {
+    background-image: url(images/aptitudini/software.png);
+}
+.containerAbilitatiSoftware {
+    position: relative;
+    display: inline-block;
+    margin-top: 50px;
+    margin-left: 7rem;
+    margin-bottom: 100px;
+}
+.divuriAbilitatiSoftware {
+    margin-top: 35px;
+    display: block;
+    margin-left: 70px;
+}
+
+.divuriAbilitatiSoftware span {
+    font-size: 20px;
+    color: #42a6c9;
+}
+.containerAbilitatiTexteSiImagini {
+    margin-left: 140px;
+    margin-top: -20px;
+}
+.containerTexte {
+    display: inline-block;
+    margin: 0 30px 10px 10px;
+    font-size: 20px;
+    margin-top: -3px;
+}
+
+/* ~~~~~~~~~~~~~~~~~~  texte  */
+
+.pozaComun {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    background-size: 100% 100%;
+    margin-left: -1px;
+    margin-top: -1px;
+    transition: .4s;
+}
+
+.pozaJavaScript:hover {
+    transform: scale(2);
+    z-index: 2;
+}
+
+   /* poze individuale Software Skills  */
+   .pozaJavaScript {
+    background-image: url(images/abilitati/javascript2.png);
+}
+.pozaHtml {
+    background-image: url(images/abilitati/html5.png);
+}
+.pozaCSS{
+    background-image: url(images/abilitati/css3.png);
+}
+.pozaReact{
+    background-image: url(images/abilitati/react.png);
+}
+.pozaOOP{
+    background-image: url(images/abilitati/oop.jpg);
+}
+.pozaSASS{
+    background-image: url(images/abilitati/sass.png);
+}
+.pozaGrid{
+    background-image: url(images/abilitati/grid.png);
+}
+.pozaMysql{
+    background-image: url(images/abilitati/mysql.png);
+}
+.pozaJQuery{
+    background-image: url(images/abilitati/jquery4.png);
+}
+.pozaFetch{
+    background-image: url(images/abilitati/fetch.png);
+}
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  abilitati interpersonale  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.containerAbilitatiInterpersonale  {
+    margin-left: 7rem;
+    position: relative;
+    /* margin-bottom: 50px; */
+}
+.pozaSoftSkills {
+    background-image: url(images/soft.png);
+}
+
+.containerAbilitatiInterpersonale:hover .pozaSoftSkills {
+    transform: scale(1.2);
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  LEARN SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~     */
+#containerCourses {
+    margin-left: 7.3rem;
+    position: relative;
+    padding-top: 100px;
+    margin-bottom: 100px;
+}
+.pozaLearning {
+    background-image: url(images/learn.png);
+}
+
+
+.pozaBooks {
+    background-image: url(images/books.png);
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  Education  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.containerEducatia {
+    margin-left: 7rem;
+    position: relative;
+    padding-bottom: 80px;
+}
+.pozaEducatia {
+    background-image: url(images/education.png);
+}
+
+.containerEducatia:hover .pozaEducatia {
+    transform: scale(1.2);
+}
+#textSeminar {
+    position: relative;
+    color:rgb(86, 200, 245);
+    display: block;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  sectiunea HIRE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#hireWrapper {
+position: relative;
+width: 600px;
+height: 300px;
+left: 50%;
+transform: translate(-50%);
+margin-top: 70px ;
+display: inline-block;
+/* border: 1px solid blue; */
+}
+.containerHireUmbra {
+    filter: drop-shadow(0 0px 5px rgb(34, 33, 33));
+}
+
+#primulTextHire {
+    color: blue;
+    position: absolute;
+    float: left;
+    margin: 0;
+    /* max-width: 300px; */
+    /* padding: 50px 80px 50px 55px; */
+    /* padding-left: 5px; */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-image: url(images/HIRE/dots9.jpg);
+    background-size: 100% 100%;
+    background-position: bottom;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 43px;
+    /* font-size: 2em; */
+    white-space: nowrap;
+    filter: contrast(130%);
+    letter-spacing: 10px;
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+    /* border: 1px solid yellow; */
+}
+#hireWrapper:hover span{
+    animation: disparePrimulTextHire .3s forwards;
+}
+@keyframes disparePrimulTextHire {
+
+    100% {
+       opacity: 0;
+    }
+}
+.textHireHover p{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: -50px;
+    font-size: 20px;
+    color: white;
+
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  animatie cadru hire me  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* coltul din dreapta-sus */
+#hireWrapper:hover #coltDreapta {
+    animation: coltDreapta 2s ease-out forwards;
+}
+
+@keyframes coltDreapta {
+    20% {
+        opacity: 1;
+        top: -43px;
+        width: 300px;
+        -webkit-clip-path: polygon(0 7%, 97% 7%, 97% 7%, 100% 7%, 100% 0%, 0% 0%);
+clip-path: polygon(0 7%, 97% 7%, 97% 7%, 100% 7%, 100% 0%, 0% 0%);
+    }
+    30% {  
+width: 600px;
+-webkit-clip-path: polygon(0 7%, 50% 7%, 100% 7%, 100% 0, 50% 0, 0 0);
+clip-path: polygon(0 7%, 50% 7%, 100% 7%, 100% 0, 50% 0, 0 0);
+	}
+    40% {  
+        top: -30px;     
+width: 600px;
+-webkit-clip-path: polygon(0 7%, 50% 7%, 100% 7%, 100% 0, 50% 0, 0 0);
+clip-path: polygon(0 7%, 50% 7%, 100% 7%, 100% 0, 50% 0, 0 0);
+	}
+    70%{
+        top: -230px;
+        height: 150px;
+        -webkit-clip-path: polygon(0 40%, 50% 7%, 100% 40%, 100% 40%, 50% 0, 0 40%);
+clip-path: polygon(0 40%, 50% 7%, 100% 40%, 100% 40%, 50% 0, 0 40%);
+    }
+	100% {
+        top: -230px;
+        height: 150px;
+        width: 600px;
+        -webkit-clip-path: polygon(0 40%, 50% 7%, 100% 40%, 100% 40%, 50% 0, 0 40%);
+clip-path: polygon(0 40%, 50% 7%, 100% 40%, 100% 40%, 50% 0, 0 40%);
+	}
+}
+
+/* coltul din stanga-jos */
+#hireWrapper:hover #coltStanga {
+    animation: coltStanga 2s ease-out forwards;
+}
+
+@keyframes coltStanga {
+    20% {
+        top: -145px;
+        width: 300px;
+        -webkit-clip-path: polygon(3% 93%, 3% 93%, 100% 93%, 100% 100%, 0 100%, 0 93%);
+clip-path: polygon(3% 93%, 3% 93%, 100% 93%, 100% 100%, 0 100%, 0 93%);
+    }
+    30% {
+        /* top: -50px; */
+        width: 600px;
+        -webkit-clip-path: polygon(0 93%, 50% 93%, 100% 93%, 100% 100%, 50% 100%, 0 100%);
+clip-path: polygon(0 93%, 50% 93%, 100% 93%, 100% 100%, 50% 100%, 0 100%);
+    }
+    40% {
+        top: -160px;
+        width: 600px;
+        -webkit-clip-path: polygon(0 93%, 50% 93%, 100% 93%, 100% 100%, 50% 100%, 0 100%);
+clip-path: polygon(0 93%, 50% 93%, 100% 93%, 100% 100%, 50% 100%, 0 100%);
+    }
+    70%{
+        top: 50px;
+        height: 150px;
+        -webkit-clip-path: polygon(0 60%, 50% 93%, 100% 60%, 100% 60%, 50% 100%, 0 60%);
+clip-path: polygon(0 60%, 50% 93%, 100% 60%, 100% 60%, 50% 100%, 0 60%);
+    }
+
+	100% {
+        top: 50px;
+        height: 150px;
+        width: 600px;
+        -webkit-clip-path: polygon(0 60%, 50% 93%, 100% 60%, 100% 60%, 50% 100%, 0 60%);
+clip-path: polygon(0 60%, 50% 93%, 100% 60%, 100% 60%, 50% 100%, 0 60%);
+	}
+}
+
+
+/* apare text hire  */
+#hireWrapper:hover > #textSiContactHire{
+    animation: apareTextHire 2s forwards;
+}
+@keyframes apareTextHire {
+    60% {
+        opacity: 0;
+    }
+    100% {
+       opacity: 1;
+    }
+}
+
+/* apare poza hire */
+
+#hireWrapper:hover #pozaHire{
+    animation: apareTextHire 2s forwards;
+}
+@keyframes apareTextHire {
+    60% {
+        opacity: 0;
+    }
+    100% {
+       opacity: 1;
+    }
+}
+
+
+#coltDreapta {
+    position: absolute;
+    left: 48%;
+transform: translate(-50%);
+top: -75px;
+    /* width: 300px; */
+    width: 120%;
+    height: 100px;
+    background-color: rgb(207, 244, 247);
+    -webkit-clip-path: polygon(0 7%, 97% 7%, 97% 100%, 100% 100%, 100% 0%, 0% 0%);
+clip-path: polygon(0 7%, 97% 7%, 97% 100%, 100% 100%, 100% 0%, 0% 0%);
+}
+
+#coltStanga{
+    position: absolute;
+    left: 48%;
+transform: translate(-50%);
+    top: -75px;
+    width: 120%;
+    height: 100px;
+    background-color: rgb(207, 244, 247);
+    -webkit-clip-path: polygon(3% 0, 3% 93%, 100% 93%, 100% 100%, 0 100%, 0 0);
+clip-path: polygon(3% 0, 3% 93%, 100% 93%, 100% 100%, 0 100%, 0 0);
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  apare poza hire la hover  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#wrapperPozaHire {
+    filter: drop-shadow(0 0px 5px rgb(34, 33, 33));
+}
+#pozaHire {
+    position: absolute;
+    width: 280px;
+    height: 390px;
+    top: -151px;
+    /* left: 140px; */
+    left: 70%;
+    transform: translate(-50%);
+    /* left: 50px; */
+    background-color: grey;
+    background: url(images/eu1.png); 
+    background-size: cover;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
+clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
+z-index: -3;
+opacity: 0;
+}
+
+
+/* date contact hire */
+#textSiContactHire {
+    position: relative;
+    top: 75px;
+    left: 30px;
+    opacity: 0;
+}
+#perfectDay {
+    position: absolute;
+    font-size: 20px;
+    top: -30px;
+    color: rgb(243, 245, 247);
+}
+
+#textDoiHire {
+    position: relative;
+    left: 40px;
+    margin-bottom: 20px;
+    font-size: 25px;
+    color: rgb(108, 183, 248);
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-shadow: 1px 1px 2px rgb(29, 28, 28);
+}
+/* ~~~~~~~~~~~~~~~~~~~  telefon */
+.textPhone {
+    margin-top: -5px;
+    /* left: 50%;
+    transform: translate(-50%); */
+    position: absolute;
+    color: rgb(207, 244, 247);
+    white-space: nowrap;
+}
+
+.bindTexteHire span {
+    position: absolute;
+    font-size: 20px;
+    margin-left: 25px;
+    /* margin-top: 0px; */
+}
+
+.textPhone p, .textEmail p, .textGmail p, .textLinkedin p {
+    position: absolute;
+    margin-top: 0px;
+    font-size: 20px;
+    margin-left: 85px;
+    font-weight: bold;
+    color: rgb(125, 190, 247);
+}
+.textNumeAdrese {
+    margin-top: 3px;
+    left: 25px;
+    position: absolute;
+    white-space: nowrap;
+    color: rgb(207, 244, 247);
+}
+
+.pozaPhone, .pozaEmail, .pozaGmail, .pozaLinkedin  {
+    width: 25px;
+    height: 25px;
+    margin-left: -9px;
+    position: absolute;
+    margin-top: 0px;
+    background-image: url(images/HIRE/phone3.png);
+    background-size: 100% 100%;
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~ e-mail */
+.textEmail {
+    margin-top: 35px;
+    position: absolute;
+    white-space: nowrap;
+    color: rgb(207, 244, 247);
+}
+
+.textEmail span {
+    position: absolute;
+    font-size: 20px;
+    margin-left: 25px;
+}
+
+.pozaEmail {
+    background-image: url(images/HIRE/email2.png);
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~ g-mail */
+.textGmail {
+    margin-top: 70px;
+    position: absolute;
+    color: rgb(207, 244, 247);
+    white-space: nowrap;
+}
+
+.textGmail span {
+    position: absolute;
+    font-size: 20px;
+    margin-left: 25px;
+}
+
+.textGmail p {
+    margin-top: 20px;
+    margin-left: 0px;
+}
+.pozaGmail {
+    background-image: url(images/HIRE/gmail.png);
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~  LinkedIn  */
+.textLinkedin{
+    margin-top: 130px;
+    position: absolute;
+    color: rgb(207, 244, 247);
+    white-space: nowrap;
+}
+
+.textLinkedin span {
+    position: absolute;
+    font-size: 20px;
+    margin-left: 25px;
+}
+
+.textLinkedin p {
+    margin-top: 0;
+    margin-left: 105px;
+}
+.pozaLinkedin {
+    background-image: url(images/HIRE/linkedin.png);
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  text hover sub text HIRE  ~~~~~~~~~~~~~~~~~~~~~ */
+/* #textHover b {
+position: absolute;
+color: cyan;
+} */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  download CV ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#downloadWrapper {
+    text-align: center;
+    max-width: 670px;
+    height: 350px;
+    margin: 100px auto;
+    /* padding-top: 30px; */
+    z-index: -99;
+}
+#downloadWrapper p {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 18px;
+    
+}
+.resumeEuro,  .resumeModern{
+    position: relative;
+    float: left;
+    width: 300px;
+    height: 350px;
+    background-image: url(images/downloadCV/euro.jpg);
+    background-size: 100% 100%;
+    box-shadow: 0 0 13px rgb(43, 42, 42);
+}
+.resumeModern {
+    float: right;
+    background-image: url(images/downloadCV/modern.jpg);
+}
+.resumeSpan {
+    position: absolute;
+    width: 250px;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 360px;
+    color: white;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   bottom section  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.bottomSection {
+    position: relative;
+    margin-top: 200px;
+    width: 100%;
+    height: 60px;
+    background-color: rgb(54, 53, 53);
+    filter: drop-shadow(0 0px 8px rgb(17, 17, 17)); 
+}
+.backCircle {
+    position: absolute;
+    right: 100px;
+    top: -20px;
+    width: 40px;
+    height: 38px;
+    /* border-radius: 50%; */
+    background-color: rgb(31, 30, 30);
+    box-shadow: 0px 3px 2px black;
+    /* border: 2px solid grey; */
+    z-index: 5;
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    text-align: center;
+}
+.backCircle:hover {
+    cursor: pointer;
+}
+
+.backCircle:hover span{
+    /* top: -13px; */
+    animation: animatieSagetiSus .8s forwards;
+    color: white;
+}
+
+@keyframes animatieSagetiSus {
+    0% {
+        top: -2px;
+    }
+    80% {
+        top: -35px;
+        opacity: 0;
+    }
+    /* 60% {
+        top: -35px
+    } */
+    90% {
+        opacity: 0;
+        top: 35px;
+    }
+    100% {
+        top: -2px;
+        opacity: 1;
+    }
+}
+
+.backCircle  span {
+    position: relative;
+    color: rgb(146, 143, 143);
+    font-size: 23px;
+    top: -2px;
+}
+.backCircle  span:hover {
+    /* cursor: pointer; */
+    /* color: white; */
+
+}
+
+.bottomText p {
+    position: absolute;
+    /* display: block; */
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 20px;
+    margin-top: -48px;
+    /* top: 50px; */
+    z-index: 5;
+    color: grey;
+    white-space: nowrap;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  setari ecrane mici  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+@media screen and (max-width: 1400px) {
+    #pozaProfil {
+        right: 30px;
+    }
+    #textProfil {
+        top: 250px;
+ right: 350px;
+ color: white;
+ padding: 60px 170px;
+ background: radial-gradient(ellipse closest-side, rgb(14, 3, 59) 30%, transparent);
+    }
+
+    #projectsContainer {
+    width: 100%;
+    }
+
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ecran 1100   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 1100px) {
+    #navigationMenu {
+        padding-right: 4px;
+    }
+    .adreseMeniu {
+    padding:0 1px;
+    font-size: 17px;
+    /* border: 1px solid white; */
+}
+#pozaProfil { 
+  margin-top: 51px;
+    width: 25rem;
+  height: 30rem;
+  border-radius: 0px;
+}
+#textProfil {
+        top: 180px;
+ padding: 100px 120px;
+ background: radial-gradient(ellipse closest-side, rgb(14, 3, 59) 30%, transparent);
+    }
+    
+#titluProiecte {
+    font-size: 21px;
+}
+
+.textAboutMe {
+    font-size: 20px;
+    line-height: 28px;
+padding: 5px 15px;
+}
+#titluDevices {
+    font-size: 40px;
+}
+    .containerDevices {
+    height: 7cm;
+    }
+    .textDevices {
+        max-width: 85%;
+    }
+
+    .imagineProiectLaptop {
+    top: 0.15cm;
+    width: 5.2cm;
+    height: 3.1cm;
+    }
+    .imagineLaptop {
+    width: 7cm;
+    height: 4cm;
+    left: -330px;
+    }
+    .imagineLaptop:hover {
+    transform: scale(1.2) translateY(-.3cm);
+}
+
+.imagineMonitor {
+    width: 9cm;
+    height: 7.5cm;
+}
+.imagineMonitor:hover {
+    transform: scale(1.15) translateY(-.5cm) translateX(-3.8cm);
+}
+.imagineProiectMonitor {
+    top: .3cm;
+    width: 8.5cm;
+    height: 5.5cm;
+}
+.efectUmbraMonitor {
+    width: 2.9cm;
+}
+
+.imagineTelefon {
+    left: 70px;
+    top: 1.02cm;
+    width: 1.5cm;
+    height: 3cm;
+}
+
+.imagineTelefon:hover {
+    transform: scale(1.4) translateY(1cm);
+    margin-top: -1.98cm;
+}
+
+.imagineProiectTelefon {
+    top: .2cm;
+    width: 1.4cm;
+    height: 2.45cm;
+}
+.soonText {
+    margin-top: 40%;
+}
+.soonText:hover {
+    font-size: 10px;
+}
+.VsoonText {
+    color: rgb(50, 134, 160);
+    text-align: center;
+    margin-top: 20%;
+    font-size: 10px;
+    white-space: nowrap;
+    text-shadow: 1px 1px 2px rgb(39, 39, 39);
+    display: none;
+}
+
+.imagineTableta {
+    left: 140px;
+    top: .95cm;
+    width: 4cm;
+    height: 3cm;
+}
+
+.imagineTableta:hover {
+    transform: scale(1.3);
+    margin-top: -.4cm;
+}
+.imagineProiectTableta {
+    top: .34cm;
+    width: 3.3cm;
+    height: 2.3cm;
+}
+
+
+.imagineReact {
+display: none;
+}
+.imagineReactOglinda {
+display: none;
+
+}
+#imagineReactOglindaObturator {
+display: none;
+}
+
+@keyframes reactAnimation {
+    70% {
+        opacity: 1;
+    }
+  100% { 
+    transform:  rotate(700deg) scaleY(1); left: 80%; 
+    opacity: 0;
+  }
+}
+
+@keyframes reactAnimation2 {
+    70% {
+        opacity: 1;
+    }
+  100% { 
+    transform:  rotate(-700deg) scaleY(1); left: 80%; 
+    opacity: 0;
+  }
+}
+@keyframes reactAnimation3 {
+  100% { 
+left: 80%;
+  }
+}
+
+.imaginePenson {
+    width: 500px;
+    top: -140px;
+    left: 10px;
+}
+.containerAptitudini {
+    margin-left: 5rem;
+    width: 85%;
+}
+.containerAbilitatiSoftware {
+    margin-left: 2rem;
+}
+.containerAbilitatiInterpersonale {
+    margin-left: 5rem;
+    width: 85%;
+}
+#containerCourses, #containerBooks {
+    margin-left: 5rem;
+    width: 85%;
+}
+
+
+}
+
+
+    @media screen and (max-width: 800px) {
+    /* #pozaProfil {
+        margin-right: 0px;
+    } */
+    #textProfil {
+ right: 250px;
+    }
+
+    .imaginePenson {
+    /* display: none; */
+}
+
+.textAptitudini {
+    margin-left: 5px;
+}
+.sageataText {
+    left: -25px;
+}
+    }
+
+    @media screen and (max-width: 650px){
+        #containerDayNight {
+            top: 50px;
+        }
+    }
+
+    </style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=0.5">
+<link rel="stylesheet" href="aos-by-red.css">
+<link rel="Shortcut icon" href="images/favicon.ico" />
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+     <!-- <link href='https://fonts.googleapis.com/css?family=Farsan' rel='stylesheet'> -->
+     <link href='https://fonts.googleapis.com/css?family=MedievalSharp' rel='stylesheet'>
+
+<title>Personal Profile</title>
+    </head>
+
+    <body>
+        <div id="profilWrapper">
+
+            <div id="navigationMenu">   
+
+                <div id="containerDayNight" >
+                    <div id="changeSite" >
+                        <div id="textDay" onclick="changeDay(); changeNightDay();"><p>Day  <br> Mode</p></div>
+                        <div id="textNight"  onclick="changeNight(); changeNightDay();"><p>Night  <br> Mode</p></div>
+                    </div>
+                    <div id="rotundDayNight"></div>
+                </div>
+
+                
+                <div class="adreseMeniu" onclick="salt_contact()"><p>Contact</p></div>
+                <div class="adreseMeniu" onclick="salt_documentation()"><p>Courses</p></div>
+
+                <div class="adreseMeniu" onclick="salt_abilities()"><p>My abilities</p></div>
+                <div class=" adreseMeniu projects"><p>My Projects</p> 
+                      <div id="submenuProjects">
+                        <div class="submenuArrow"></div>
+                        <div id="projectCulorile" onclick="salt_culorile()"><span>#1: Prospetime si culoare</span></div>
+                          <div id="projectPicturi" onclick="salt_picturi()"><span>#2: Picturi in Ulei</span></div>
+                          <div id="projectCommerce" onclick="salt_commerce()"><span>#3: E-Commerce</span></div>
+                          <div id="projectModel" onclick="salt_model()"><span>#4: U-Model</span></div>
+                          <div id="projectReact" onclick="salt_react()"><span>#5: React</span></div>
+                      </div>
+                    </div>
+
+                    <div class="adreseMeniu" onclick="salt_aboutMe()"><p>About me</p></div>
+
+              </div>
+
+              <!-- <div id="wrapperContainer"> -->
+            <div id="profilContainer">
+            <!-- </div> -->
+                <div id="textProfil">
+                    <h1>AVĂDĂNEI  CONSTANTIN</h1>
+                    <h3>Junior Front-End Developer</h3>
+                </div>
+                <div id="wrapperPozaProfil">
+                <div id="pozaProfil"></div>
+                </div>
+
+                <!-- <div class="pozaLinieBottom"></div> -->
+                <!-- <div id="bottomContainer"></div> -->
+
+                <div id="wrapperAboutMe">
+                    <div id="titluTextAboutMe"><p>About me :</p></div>
+
+  
+
+                        <span class="textAboutMe">⌯ Big-Picture Focus</span>
+                    <span class="textAboutMe">⌯ Goal-Oriented</span>
+                        <span class="textAboutMe">⌯ excellent Problem-Solving skills</span>
+                    <span class="textAboutMe">⌯ big Passion for Technology</span>
+                        <span class="textAboutMe">⌯ love to Learn - never rest</span>
+                            <span class="textAboutMe">⌯ ability to plan</span>
+
+                                <span class="textAboutMe">⌯ good Time and Task Management</span>
+                                    <span class="textAboutMe">⌯ hight attention to Detail</span>
+                                        <span class="textAboutMe">⌯ a business perspective</span>
+                                        <span class="textAboutMe">⌯ logical thinking</span>
+                                            <span class="textAboutMe">⌯ Qualitative & Authentic</span>
+
+            <!-- sfarsit de : wrapperAboutMe -->
+                  </div>
+
+                <!-- <div id="bottomContainer"></div> -->
+            </div>
+
+
+
+
+        <div id="projectsContainer" >
+
+            <div id="titluProiecte"><p>My projects :</p></div>
+
+            <div id="proiectColors">
+
+                <div class="culorileImage"></div>
+
+                <div class="containerDevices">
+    
+                    <div class="imagineLaptop">
+                        <div class="imagineProiectLaptop" id="imagineLaptopCulorile">
+                            <div id="childLaptopColors"></div>
+                        </div>
+                    </div>
+            
+                    <div class="imagineMonitor">
+                        <div class="imagineProiectMonitor" id="imagineMonitorCulorile">
+                            <div id="childMonitorColors"></div>                           
+                        </div>
+                        <div class="efectUmbraMonitor"></div>
+                    </div>
+                    
+                    <div class="imagineTelefon">
+                        <div class="imagineProiectTelefon" id="imagineTelefonCulorile">
+                            <div id="childTelefonColors"></div>
+                        </div>
+                    </div>
+            
+                    <div class="imagineTableta">
+                        <div class="imagineProiectTableta" id="imagineTabletaCulorile">
+                            <div id="childTabletaColors"></div>
+                        </div>
+                    </div>
+            
+                </div>
+
+                <div class="textProiecte">
+                    <a href ="https://avadaneiconstantin.github.io/Prospetime-si-culoare/"target=”_blank” id="titluDevices">#1: Prospetime si culoare</a>
+                    <p class="textDevices">A project / application through which you can find out more about the colors that surround you, but also about yourself by choosing your favorite color. <br>
+                        You will be surprised what new things you will find out about your character, at a click away...
+                    </p>
+                </div>
+            </div>
+
+            
+
+            <div id="proiectPicturi">
+
+                <div class="containerDevices">
+    
+                    <div class="imagineLaptop">
+                        <div class="imagineProiectLaptop" id="imagineLaptopPicturi">
+                            <div id="childLaptopPicturi"></div>
+                        </div>
+                    </div>
+            
+                    <div class="imagineMonitor">
+                        <div class="imagineProiectMonitor" id="imagineMonitorPicturi">
+                            <div id="childMonitorPicturi"></div>
+                        </div>
+                        <div class="efectUmbraMonitor"></div>
+                    </div>
+                    
+                    <div class="imagineTelefon">
+                        <div class="imagineProiectTelefon" id="imagineTelefonPicturi">
+                            <div id="childTelefonPicturi"></div>
+                        </div>
+                    </div>
+            
+                    <div class="imagineTableta">
+                        <div class="imagineProiectTableta" id="imagineTabletaPicturi">
+                            <div id="childTabletaPicturi"></div>
+                        </div>
+                    </div>
+            
+                </div>
+
+                <div class="textProiecte">
+                    <div class="imaginePenson"></div>
+                    <a href ="https://avadaneiconstantin.github.io/Picturi-in-Ulei/" target=”_blank” id="titluDevices">#2: Picturi in Ulei</a>
+                    <p class="textDevices">Oil paintings that can add beauty, creativity, originality and personality; also it represent an ideal gift that will last in time and beauty.
+                        The paintings are handmade on linen of the highest quality and are treated with professional primer that provides good adhesion,
+                        using consistent pigments selected from professional ranges that offer good resistance to time and exposure to light.</p>
+                </div>
+
+            </div>   
+            
+            
+
+
+            <div id="proiectCommerce">
+
+                <div class="containerDevices">
+    
+                    <div class="imagineLaptop">
+                        <div class="imagineProiectLaptop" id="imagineLaptopCommerce">
+                            <div class="childLaptopCommerce"></div>
+                        </div>
+                    </div>
+            
+                    <div class="imagineMonitor">
+                        <div class="imagineProiectMonitor" id="imagineMonitorCommerce">
+                            <div class="childMonitorCommerce"></div>
+                        </div>
+                        <div class="efectUmbraMonitor"></div>
+                    </div>
+                    
+                    <div class="imagineTelefon">
+                        <div class="imagineProiectTelefon" id="imagineTelefonCommerce">
+                            <div class="childTelefon">
+                                <div class="soonText">Soon...</div>
+                                <div class="VsoonText">Very soon !!</div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="imagineTableta">
+                        <div class="imagineProiectTableta" id="imagineTabletaCommerce">
+                            <div class="childTabletaCommerce"></div>
+                        </div>
+                    </div>
+            
+                </div>
+
+                <div class="textProiecte">
+                    <a href ="https://e-commerce-shopp.netlify.app/" target=”_blank” id="titluDevices">#3: E- Commerce</a>
+                    <p class="textDevices">An e-commerce page where we can find different offers and products to satisfy all the pleasures and needs for each of us.</p>
+                </div>
+
+            </div>
+
+          
+
+            <div id="proiectModel">
+
+                <div class="containerDevices">
+    
+                    <div class="imagineLaptop">
+                        <div class="imagineProiectLaptop" id="imagineLaptopModel">
+                            <div class="childLaptopModel"></div>
+                        </div>
+                    </div>
+            
+                    <div class="imagineMonitor">
+                        <div class="imagineProiectMonitor" id="imagineMonitorModel">
+                            <div class="childMonitorModel"></div>
+                        </div>
+                        <div class="efectUmbraMonitor"></div>
+                    </div>
+                    
+                    <div class="imagineTelefon">
+                        <div class="imagineProiectTelefon" id="imagineTelefonModel">
+                            <div class="childTelefon">
+                                <div class="soonText">Soon...</div>
+                                <div class="VsoonText">Very soon !!</div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="imagineTableta">
+                        <div class="imagineProiectTableta" id="imagineTabletaModel">
+                            <div class="childTabletaModel"></div>
+                        </div>
+                    </div>
+            
+                </div>
+
+                <div class="textProiecte">
+                    <a href ="https://avadanei-fashionapp.netlify.app/" target=”_blank” id="titluDevices">#4: U - Model</a>
+                    <p class="textDevices">An application in which you can set your actual height and width, to see which products suit you best. 
+                        Here you will find beautiful clothing items, but also top models "on the podium". <br>
+                        Enjoy shopping! :) </p> 
+                </div>
+
+            </div>
+
+
+            <div id="proiectReact">
+
+                <div class="containerDevices">
+    
+                    <div class="imagineLaptop">
+                        <div class="imagineProiectLaptop" id="imagineLaptopReact">
+                        </div>
+                    </div>
+            
+                    <div class="imagineMonitor">
+                        <div class="imagineProiectMonitor" id="imagineMonitorReact">
+                            <div class="childMonitor"></div>
+                        </div>
+                        <div class="efectUmbraMonitor"></div>
+                    </div>
+                    
+                    <div class="imagineTelefon">
+                        <div class="imagineProiectTelefon" id="imagineTelefonReact">
+                            <div class="childTelefon">
+                                <div class="soonText">Soon...</div>
+                                <div class="VsoonText">Very soon !!</div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="imagineTableta">
+                        <div class="imagineProiectTableta" id="imagineTabletaReact">
+                            <div class="childTablet"></div>
+                        </div>
+                    </div>
+            
+                </div>
+
+                <div class="textProiecte">
+                    <div class="imagineReact"></div>
+                    <div class="imagineReactOglinda"></div>
+                    <div id="imagineReactOglindaObturator"></div>
+        
+                    <a href ="https://avadaneiconstantin.github.io/React-app-Live/" target=”_blank” id="titluDevices">#5: React Application</a>
+                    <p class="textDevices">A small application made with React programming language, in which we can add or delete customers from the list of employees of a fictitious company.</p>
+                </div>
+
+            </div>
+
+
+
+            <!-- <div id="proiectCV">
+
+                <div class="containerDevices">
+    
+                    <div class="imagineLaptop">
+                        <div class="imagineProiectLaptop" id="imagineLaptopCV">
+                            <div class="childLaptopCV"></div>
+                        </div>
+                    </div>
+            
+                    <div class="imagineMonitor">
+                        <div class="imagineProiectMonitor" id="imagineMonitorCV">
+                            <div class="childMonitorCV"></div>
+                        </div>
+                        <div class="efectUmbraMonitor"></div>
+                    </div>
+                    
+                    <div class="imagineTelefon">
+                        <div class="imagineProiectTelefon" id="imagineTelefonCV">
+                            <div class="childTelefonCV"></div>
+                        </div>
+                    </div>
+            
+                    <div class="imagineTableta">
+                        <div class="imagineProiectTableta" id="imagineTabletaCV">
+                            <div class="childTabletCV"></div>
+                        </div>
+                    </div>
+            
+                </div>
+
+                <div class="textProiecte">
+                    <a href ="https://avadaneiconstantin.github.io/Avadanei-Constantin-C.V./" id="titluDevices">#6: C.V. - Web Page</a>
+                    <p class="textDevices">Web-page project, made by using language programs like: HTML, CSS and JavaScript,
+                        where you can find data and information about me.</p>
+                </div>
+
+            </div> -->
+
+
+        <!-- sfarsit de : projectsContainer -->
+        </div>
+
+        <div id="titluAbilitati"><p>My abilities :</p></div>
+
+        <div id="wrapperAptitudini" data-aos="fade-up">
+
+            <div class="containerAptitudini">
+                <div class="pozaKeySkills"></div>
+
+                <div id="aptitudiniText"><b>KEY SKILLS</b></div>
+
+                <div class="sageataText unu">
+                    <div class="baraSageataSus"></div>
+                    <div class="baraSageataJos"></div>
+                </div>
+                <div class="aptitudiniUnu textAptitudini">Stay up to date with the latest web technologies</div>
+
+                <div class="sageataText doi">
+                    <div class="baraSageataSus"></div>
+                    <div class="baraSageataJos"></div>
+                </div>
+                <div class="aptitudiniDoi textAptitudini">A positive, high energy team player</div>
+                
+                <div class="sageataText trei">
+                    <div class="baraSageataSus"></div>
+                    <div class="baraSageataJos"></div>
+                </div>
+                <div class="aptitudiniTrei textAptitudini">Pay attention to how things work and a quick learner</div>
+
+                <div class="sageataText patru">
+                    <div class="baraSageataSus"></div>
+                    <div class="baraSageataJos"></div>
+                </div>
+                <div class="aptitudiniPatru textAptitudini">I like constructive challenges</div>
+
+                <div class="sageataText cinci">
+                    <div class="baraSageataSus"></div>
+                    <div class="baraSageataJos"></div>
+                </div>
+                <div class="aptitudiniCinci textAptitudini">Creative, strong imaginative - aim to redefine the box</div>
+
+            </div>
+
+            <div class="containerAbilitatiSoftware" data-aos="fade-up">
+                <div class="pozaAbilitatiSoftware"></div>
+                <h4 id="textAbilitatiInterpersonale">SOFTWARE SKILLS</h4>
+        
+                <div class="divuriAbilitatiSoftware">
+                    <span>» Proficient with:</span>
+                    <div class="containerAbilitatiTexteSiImagini">
+        
+        
+                        <div class="containerTexte">
+                            <div class="pozaJavaScript pozaComun" ></div>
+                            <b class="culoareComunaTexte">JavaScript,</b>
+                        </div>
+        
+                        <div class="containerTexte">
+                            <div class="pozaHtml pozaComun"></div>
+                            <b class="culoareComunaTexte">HTML5,</b>
+                        </div>
+                        <div class="containerTexte">
+                            <div class="pozaCSS pozaComun"></div>
+                            <b class="culoareComunaTexte">CSS3.</b>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="divuriAbilitatiSoftware">
+                    <span>» Begginer with:</span>
+                    <div class="containerAbilitatiTexteSiImagini">
+        
+                        <div class="containerTexte">
+                            <div class="pozaReact pozaComun"></div>
+                            <b class="culoareComunaTexte">React.</b>
+                        </div>
+                        <div class="containerTexte">
+                            <div class="pozaOOP pozaComun"></div>
+                            <b class="culoareComunaTexte">OOP,</b>
+                        </div>
+                        <div class="containerTexte">
+                            <div class="pozaSASS pozaComun"></div>
+                            <b class="culoareComunaTexte">SASS,</b>
+                        </div>
+                        <div class="containerTexte">
+                            <div class="pozaGrid pozaComun"></div>
+                            <b class="culoareComunaTexte">Grid layout.</b>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="divuriAbilitatiSoftware">
+                    <span>» Familiar with:</span>
+                    <div class="containerAbilitatiTexteSiImagini">
+        
+                        <div class="containerTexte">
+                            <div class="pozaMysql pozaComun"></div>
+                            <b class="culoareComunaTexte">MySQL,</b>
+                        </div>
+                        <div class="containerTexte">
+                            <div class="pozaJQuery pozaComun culoareComunaTexte"></div>
+                            <b class="culoareComunaTexte">jQuery,</b>
+                        </div>
+                        <div class="containerTexte">
+                            <div class="pozaFetch pozaComun culoareComunaTexte"></div>
+                            <b class="culoareComunaTexte">Fetch API,</b>
+                        </div>
+        
+                    </div>
+                </div>
+        
+            <!-- sfarsit de abilitatiSoftware -->
+            </div>
+            <!-- </div> -->
+
+            <div class="containerAbilitatiInterpersonale" data-aos="fade-up">
+
+                <div class="pozaSoftSkills"></div>
+                <h4 id="textAbilitatiInterpersonale">SOFT SKILLS</h4>
+
+                    <div class="sageataText unu">
+                        <div class="baraSageataSus"></div>
+                        <div class="baraSageataJos"></div>
+                    </div>
+                    <div class="aptitudiniUnu textAptitudini">Good verbal english communication and written</div>
+
+                    <div class="sageataText doi">
+                        <div class="baraSageataSus"></div>
+                        <div class="baraSageataJos"></div>
+                    </div>
+                    <div class="aptitudiniDoi textAptitudini">Interpersonal, detail oriented and good with numbers</div>
+
+                    <div class="sageataText trei">
+                        <div class="baraSageataSus"></div>
+                        <div class="baraSageataJos"></div>
+                    </div>
+                    <div class="aptitudiniTrei textAptitudini">Investigative, analythical with critical thinking</div>
+
+                    <div class="sageataText patru">
+                        <div class="baraSageataSus"></div>
+                        <div class="baraSageataJos"></div>
+                    </div>
+                    <div class="aptitudiniPatru textAptitudini">Always looking to accumulate new knowledge and upgrade the old ones</div>
+ 
+                    <div class="sageataText cinci">
+                        <div class="baraSageataSus"></div>
+                        <div class="baraSageataJos"></div>
+                    </div>
+                    <div class="aptitudiniCinci textAptitudini">A methodical and structured approach to problem solving/improvements </div>
+
+                    <div class="sageataText sase">
+                        <div class="baraSageataSus"></div>
+                        <div class="baraSageataJos"></div>
+                    </div>
+                    <div class="aptitudiniSase textAptitudini">Good at predicting user expectations</div>
+
+                    <div class="sageataText sapte">
+                        <div class="baraSageataSus"></div>
+                        <div class="baraSageataJos"></div>
+                    </div>
+                    <div class="aptitudiniSapte textAptitudini">Ability to maintain and work calm under pressure</div>
+
+                    <div class="sageataText opt">
+                        <div class="baraSageataSus"></div>
+                        <div class="baraSageataJos"></div>
+                    </div>
+                    <div class="aptitudiniOpt textAptitudini">Innovative ideas for short and long term projects</div>
+
+                    <div class="sageataText noua">
+                        <div class="baraSageataSus"></div>
+                        <div class="baraSageataJos"></div>
+                    </div>
+                    <div class="aptitudiniNoua textAptitudini">Patience and attention to graphic details</div>
+  
+                    <div class="sageataText zece">
+                        <div class="baraSageataSus"></div>
+                        <div class="baraSageataJos"></div>
+                    </div>
+                    <div class="aptitudiniZece textAptitudini">Good at sketches, graphics and drawings</div>
+
+                    <div class="sageataText unusprezece">
+                        <div class="baraSageataSus"></div>
+                        <div class="baraSageataJos"></div>
+                    </div>
+                    <div class="aptitudiniUnusprezece textAptitudini">Helpful attitude</div>
+
+                    <div class="sageataText doisprezece">
+                        <div class="baraSageataSus"></div>
+                        <div class="baraSageataJos"></div>
+                    </div>
+                    <div class="aptitudiniDoisprezece textAptitudini">Lateral thinking- pay attention to "movement values" </div>                   
+            </div>
+
+
+
+
+            <div id="containerCourses" data-aos="fade-up">
+
+
+                <div class="pozaLearning"></div>
+                <h4 id="titluCourses">SELF-LEARNING COURSES (2018-2022)</h4>
+
+
+                    <div id="coursesUnu" class="textCourses"><div id="plusUnu" class="plusCourses">+</div>
+                    Udemy - The.Complete.JavaScript.Course.2022_From.Zero.to.Expert! (learning now)</div>
+                    <div id="cuprinsCursuriUnu" class="cuprinsCursuriToate"> 
+                        <p>01. Welcome, Welcome, Welcome!</p>  
+                        <p>02. JavaScript Fundamentals _ Part 1 </p> 
+                        <p>03. JavaScript Fundamentals _ Part 2 </p> 
+                        <p>04. How to Navigate This Course</p> 
+                        <p>05. Developer Skills & Editor Setup </p> 
+                        <p>06. [OPTIONAL] HTML & CSS Crash Course </p> 
+                        <p>07. JavaScript in the Browser_ DOM and Events Fundamentals </p> 
+                        <p>08. How JavaScript Works Behind the Scenes </p> 
+                        <p>09. Data Structures, Modern Operators and Strings </p> 
+                        <p>10. A Closer Look at Functions </p> 
+                        <p>11. Working With Arrays </p> 
+                        <p>12. Numbers, Dates, Intl and Timers </p> 
+                        <p>13. Advanced DOM and Events </p> 
+                        <p>14. Object-Oriented Programming (OOP) With JavaScript </p> 
+                        <p>15. Mapty App_ OOP, Geolocation, External Libraries, and More!</p>
+                        <p>16. Asynchronous JavaScript_ Promises, Async_Await, and AJAX</p>
+                        <p>17. Modern JavaScript Development_ Modules, Tooling, and Functional</p>
+                        <p>18. Forkify App_ Building a Modern Application</p>
+                        <p>19. Setting Up Git and Deployment</p>
+                        <p>20. The End!</p>
+                        
+                    </div>
+
+                    <div id="coursesDoi" class="textCourses"><div id="plusDoi" class="plusCourses">+</div>
+                    React - The Complete Guide (incl Hooks, React Router, Redux)</div>
+                    <div id="cuprinsCursuriDoi" class="cuprinsCursuriToate"> 
+                        <p>01 Getting Started</p> 
+                        <p>02 JavaScript Refresher</p>
+                        <p>03 React Basics & Working With Components</p>
+                        <p>04 React State & Working with Events</p>
+                        <p>05 Rendering Lists & Conditional Content</p>
+                        <p>06 Styling React Components</p>
+                        <p>07 Debugging React Apps</p>
+                        <p>08 Time to Practice_ A Complete Practice Project</p>
+                        <p>09 Diving Deeper_ Working with Fragments, Portals & _Refs_</p> 
+                        <p>10 Advanced_ Handling Side Effects, Using Reducers & Using the Context API</p>
+                        <p>11 Practice Project_ Building a Food Order App</p>
+                        <p>12 A Look Behind The Scenes Of React & Optimization Techniques</p>
+                        <p>13 An Alternative Way Of Building Components_ Class-based Components</p>
+                        <p>14 Sending Http Requests (e.g. Connecting to a Database)</p>
+                        <p>15 Building Custom React Hooks</p>
+                        <p>16 Working with Forms & User Input</p>
+                        <p>17 Practice Project_ Adding Http & Forms To The Food Order App</p>
+                        <p>18 Diving into Redux (An Alternative To The Context API)</p>
+                        <p>19 Advanced Redux</p>
+                        <p>20 Building a Multi-Page SPA with React Router</p>
+                        <p>21 Deploying React Apps</p>
+                        <p>22 Adding Authentication To React Apps</p>
+                        <p>23 A (Pretty Deep Dive) Introduction to Next.js</p>
+                        <p>24 Animating React Apps</p>
+                        <p>25 Replacing Redux with React Hooks</p>
+                        <p>26 Testing React Apps (Unit Tests)</p>
+                        <p>27 React + TypeScript</p>
+                        <p>28 Optional_ React Hooks Introduction & Summary</p>
+                        <p>29 Optional_ React Summary & Core Feature Walkthrough</p>
+                        <p>30 Course Roundup</p>
+                        <p>31 This Course Got Updated!</p>                      
+               
+                        
+                    </div>
+
+                    <!-- <div id="coursesDoi" class="textCourses"><div id="plusDoi" class="plusCourses"><b>+</b></div>FrontendMasters -JavaScript-The.Hard.Parts.v2</div>
+                        <div id="cuprinsCursuriDoi"> 
+                              <p>1. Introduction</p>  
+                              <p>2. JavaScript Principles</p>
+                              <p>3. Functions & Callbacks</p>
+                              <p>4. Closure</p>
+                              <p>5. Asynchronous JavaScript</p>
+                              <p>6. Promises</p>
+                              <p>7. Classes & Prototypes</p>
+                              <p>8. Wrapping Up</p>                                             
+                        </div> -->
+                   
+
+                    <div id="coursesTrei" class="textCourses"><div id="plusTrei" class="plusCourses"><b>+</b></div>Frontendmasters -Getting.Started.with.JavaScript.v2</div>
+                    <div id="cuprinsCursuriTrei" class="cuprinsCursuriToate"> 
+                          <p>1. Introduction</p>  
+                          <p>2. Programming Primer</p>
+                          <p>3. Types & Coercion</p>
+                          <p>4. Scope</p>
+                          <p>5. this & Prototypes</p>
+                          <p>6. Practice</p>
+                          <p>7. Wrapping Up</p>
+                          <p>Exercises</p>                                             
+                    </div>
+
+                    <div id="coursesPatru" class="textCourses"><div id="plusPatru" class="plusCourses"><b>+</b></div>Web Dev Simplified - JavaScript Simplified </div>
+                    <div id="cuprinsCursuriPatru" class="cuprinsCursuriToate"> 
+                          <p>1 - Course Introduction</p>  
+                          <p>2 - JavaScript Is Hard</p>
+                          <p>3 - Don't Get Discouraged </p>
+                          <p>4 - What Is JavaScript?</p>
+                          <p>5 - Download Tools</p>
+                          <p>6 - Your First JavaScript App</p>
+                          <p>7 - Prettier</p>
+                          <p>8 - First Variable</p>
+                          <p>9 - Number Type</p>
+                          <p>10 - String Type</p>
+                          <p>11 - Boolean Type</p>
+                          <p>12 - Null And Undefined Type</p>
+                          <p>13 - Variable Comparison</p>
+                          <p>14 - Garbage Collection</p>
+                          <p>15 - Comments </p>
+                          <p>16 - Normal Functions</p>
+                          <p>17 - Passing Functions As Arguments</p>
+                          <p>18 - Arrow Functions</p>
+                          <p>19 - Stack Trace And Call Stack</p>
+                          <p>20 - Hoisting</p>
+                          <p>21 - Scoping</p>
+                          <p>22 - Closures</p>
+                          <p>23 - Const</p>
+                          <p>24 - Var</p>
+                          <p>25 - Type Coercion</p>
+                          <p>26 - == Vs ===</p>
+                          <p>27 - NaN</p>
+                          <p>28 - Arrays</p>
+                          <p>29 - Objects</p>
+                          <p>30 - Reference Vs Value</p>
+                          <p>31 - Array Methods</p>
+                          <p>32 - String Template Literals</p>
+                          <p>33 - New And This</p>
+                          <p>34 - Async Vs Defer</p>
+                          <p>35 - Window</p>
+                          <p>36 - Document</p>
+                          <p>37 - Id And Class Selectors</p>
+                          <p>38 - Query Selectors</p>
+                          <p>39 - Event Listeners</p>
+                          <p>40 - Additional Differences Between Arrow And Normal Functions</p>
+                          <p>41 - Data Attributes</p>
+                          <p>42 - DOM Traversal</p>
+                          <p>43 - Simple Todo List</p>
+                          <p>44 - Modal Introduction</p>
+                          <p>45 - Modal Walkthrough</p>
+                          <p>46 - If</p>
+                          <p>47 - Ternary Operator</p>
+                          <p>48 - Switch Statement</p>
+                          <p>49 - For Loop</p>
+                          <p>50 - While Loop</p>
+                          <p>51 - Recursion</p>
+                          <p>52 - Short Circuit Evaluation</p>
+                          <p>53 - Midi Piano</p>
+                          <p>54 - Quiz App Introduction</p>
+                          <p>55 - Quiz App Walkthrough</p>
+                          <p>56 - Form Validation Introduction</p>
+                          <p>57 - Form Validation Walkthrough</p>
+                          <p>58 - Callbacks</p>
+                          <p>59 - Promises</p>
+                          <p>60 - Async Await</p>
+                          <p>61 - Fetch</p>
+                          <p>62 - Event Loop</p>
+                          <p>63 - Event Delegation</p>
+                          <p>64 - Browser Storage</p>
+                          <p>65 - Advanced Todo List</p>
+                          <p>66 - Expand Collapse Introduction</p>
+                          <p>67 - Expand Collapse Walkthrough</p>
+                          <p>68 - Google Maps Clone</p>
+                          <p>69 - ES6 Modules</p>
+                          <p>70 - Node Modules</p>
+                          <p>71 - NPM</p>
+                          <p>72 - Parcel</p>
+                          <p>73 - Date Picker</p>
+                          <p>74 - Shopping Cart </p>                                            
+                    </div>
+
+                    <div id="coursesCinci" class="textCourses"><div id="plusCinci" class="plusCourses"><b>+</b></div>Code.with.Mosh : Object-oriented.Programming.in.JavaScript</div>
+                    <div id="cuprinsCursuriCinci" class="cuprinsCursuriToate"> 
+                          <p>01 Getting Started</p>  
+                          <p>02 Objects</p> 
+                          <p>03 Prototypes</p> 
+                          <p>04 Prototypical Inheritance</p> 
+                          <p>05 ES6 Classes</p> 
+                          <p>06 ES6 Modules</p>                                              
+                    </div>
+
+                    <div id="coursesSase" class="textCourses"><div id="plusSase" class="plusCourses"><b>+</b></div>Advanced.CSS.and.Sass.Flexbox.Grid.Animations.and.More!</div>
+                    <div id="cuprinsCursuriSase" class="cuprinsCursuriToate"> 
+                          <p>1. Welcome, Welcome, Welcome!</p>  
+                          <p>2. Natours Project — Setup and First Steps (Part 1)</p>
+                          <p>3. How CSS Works A Look Behind the Scenes</p>
+                          <p>4. Introduction to Sass and NPM</p>
+                          <p>5. Natours Project — Using Advanced CSS and Sass (Part 2)</p>
+                          <p>6. Natours Project — Advanced Responsive Design (Part 3)</p>
+                          <p>7. Trillo Project — Master Flexbox!</p>
+                          <p>8. A Quick Introduction to CSS Grid Layouts</p>
+                          <p>9. Nexter Project — Master CSS Grid Layouts!</p>
+                          <p>10. That's It, Everyone!</p>                                             
+                    </div>           
+            </div>
+
+            <div id="containerBooks" data-aos="fade-up">
+
+                <div class="pozaBooks"></div>
+                <h4 id="textBooks">RESEARCH BOOKS</h4>
+
+                <div class="sageataText unu">
+                    <div class="baraSageataSus"></div>
+                    <div class="baraSageataJos"></div>
+                </div>
+                <div class="aptitudiniUnu textAptitudini">Advanced JavaScript </div>   
+
+                <div class="sageataText doi">
+                    <div class="baraSageataSus"></div>
+                    <div class="baraSageataJos"></div>
+                </div>
+                <div class="aptitudiniDoi textAptitudini">HTML, CSS, and JavaScript All in One, 3rd Edition </div> 
+
+                <div class="sageataText trei">
+                    <div class="baraSageataSus"></div>
+                    <div class="baraSageataJos"></div>
+                </div>
+                <div class="aptitudiniTrei textAptitudini">Web Development For Beginners Learn Html Css Javascript Step By Step </div> 
+            </div>
+
+
+            <div class="containerEducatia" data-aos="fade-up">
+
+                <div class="pozaEducatia"></div>
+                <h4 id="textEducatia">EDUCATION</h4>
+
+                <div class="sageataText unu">
+                    <div class="baraSageataSus"></div>
+                    <div class="baraSageataJos"></div>
+                </div>
+                <div class="aptitudiniUnu textAptitudini"> 2005 - 2008 ~ Arte plastice :
+                    <br> Universitatea „Alexandru Ioan Cuza” din Iași 
+                </div>
+            </div>
+
+        <!-- sfarsit de: wrapperAptitudini -->
+        </div>
+
+        <div id="downloadWrapper"> 
+            <p class="bindTexteHire">Download my Resume.</p>
+            <div class="resumeEuro">
+                <a href="images/downloadCV/Cv-Avadanei.doc"><span class="resumeSpan bindTexteHire">click to download my (generally) EuroPass CV (doc)</span class="resumeSpan"></a>
+            </div>
+            <div class="resumeModern">
+                <a href="images/downloadCV/Avădănei Constantin CV.pdf"><span class="resumeSpan bindTexteHire">click to see/download my Jr. Fr-End Developer CV (pdf)</span class="resumeSpan"></a>
+            </div>
+        </div>
+        
+        <div id="hireWrapper" >
+            <div id="primulTextHire"><span>HIRE ME !</span>
+
+             
+
+            <div class="containerHireUmbra">
+                <div id="coltDreapta"></div>
+                <div id="coltStanga"></div>
+
+            </div>
+            
+        </div>
+    
+            <div id="textSiContactHire">
+
+                <div id="perfectDay"></div>
+
+                <h2 id="textDoiHire">HIRE ME!</h2>
+    
+                <!-- telefon -->
+                <div class="textPhone bindTexteHire">
+                    <h4 class="textNumeAdrese">Phone:</h4>
+                    <p class="texteHireContact">0758382244</p>
+                    <div class="pozaPhone"></div>
+                </div>
+    
+                <!-- e-mail -->
+                <div class="textEmail bindTexteHire">
+                    <div class="pozaEmail"></div>
+                    <h4 class="textNumeAdrese">Email:</h4>
+                    <p class="texteHireContact">a.costel85@yahoo.com</p>
+                </div>
+    
+                <!-- g-mail -->
+                <div class="textGmail bindTexteHire">
+                    <div class="pozaGmail"></div>
+                    <h4 class="textNumeAdrese">Gmail:</h4>
+                    <p class="texteHireContact">avadanei.constantin85@gmail.com</p>
+                </div>
+
+                <div class="textLinkedin bindTexteHire">
+                    <div class="pozaLinkedin"></div>
+                    <h4 class="textNumeAdrese">LinkedIn:</h4>
+                    <div id="texteHireContact"><a href="https://www.linkedin.com/in/constantin-av%C4%83d%C4%83nei-31a54a182/" target=”_blank”><p style="color:rgb(78, 181, 240); text-decoration: underline;">My LinkedIn </p></a></div>
+                </div>
+    
+                <div id="wrapperPozaHire">
+                    <div id="pozaHire"></div>
+                    </div>
+            </div>
+
+
+    
+        </div>
+        
+
+        <!-- <div class="textHireHover"><p>Hover / Click</p> </div> -->
+
+        <div class="bottomSection"> 
+            <div class="backCircle" onclick="salt_top()"><span>︽</span> </div>
+        </div>
+        <div class="bottomText"><p> ❑ Designed and created by: Avădănei Constantin ﹡ 2022</p> </div>
+        <!-- sfarsit de : profilWrapper -->
+        </div>
+
+        
+
+
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+          AOS.init({
+            duration: 1000,
+            once: true,
+          });
+        </script>
+<script>
+
+
+// const parallax = document.getElementById
+// ("profilContainer");
+
+// window.addEventListener("scroll", function (){
+//     let offset = window.pageYOffset;
+//     profilContainer.style.backgroundPositionY = offset * 0.7 + "px";
+//     pozaProfil.style.backgroundPositionY = offset * 0.7 + "px";
+// })
+// window.addEventListener("scroll", reveal); 
+
+
+
+
+// function reveal(){
+//     var reveals = document.querySelectorAll(".reveal");
+
+//     for(var i = 0; i < reveals.length; i++){
+
+//         var windowheight = window.innerHeight;
+//         var revealtop = reveals[i].getBoundingClientRect().top;
+//         var revealpoint = 150;
+
+//         if(revealtop < windowheight - revealpoint){
+//             reveals[i].classList.add("active");
+//         }
+//         else{
+//             reveals[i].classList.remove("active")
+//         }
+//     }
+// }
+
+
+// var elt= document.getElementById("profilContainer").addEventListener("click", function ()
+//  {
+//     elt.setAttribute("style", "-webkit-filter: drop-shadow(5px 5px 35px #222);");
+// });
+
+// ~~~~~~~~~~~~~~~~~  click pe night/day button  ~~~~~~~~~~~~~~~~
+
+
+function changeNightDay() {
+    let arata = document.getElementById('changeSite');
+    if (arata.style.display === 'inline') {
+        arata.style.display = 'inline-block';
+     
+        // document.getElementById("changeSite").style.background = "linear-gradient( to right, white 10%, rgb(248, 248, 115) 100%)";
+            document.getElementById("rotundDayNight").style.backgroundImage = "url('images/soare.jpg')";
+            document.getElementById("primulTextHire").style.backgroundImage = "url('images/HIRE/dots9.jpg')";
+            document.getElementById("textDay").style.display = "inline";
+            document.getElementById("textNight").style.display = "none";
+            document.getElementById("rotundDayNight").style.animation = "cercSpreDreapta .6s  forwards";
+            document.getElementById("rotundDayNight").style.boxShadow = "0 0 12px yellow";
+            document.getElementById("changeSite").style.borderColor = "#52450f";
+            document.getElementById("titluTextAboutMe").style.cssText = " color : white; text-shadow: 1px 1px 3px black";
+            document.getElementById("titluProiecte").style.color = "white";
+            document.getElementById("textDoiHire").style.color = "rgb(108, 183, 248)";
+            document.getElementById("perfectDay").style.color = "white";
+            
+
+
+        document.getElementById("profilWrapper").style.backgroundColor = "#4d4b4b";
+    // document.getElementById("bottomContainer").style.backgroundImage = "linear-gradient(to bottom, transparent 5% , #4d4b4b 90%)";
+    document.getElementById("imagineReactOglindaObturator").style.backgroundImage = "linear-gradient(to bottom, rgba(169,208,113,0) 0%,  #4d4b4b 30%)";
+
+    const culoareComuna = document.querySelectorAll(".culoareComunaTexte");
+for (i = 0; i < culoareComuna.length; i++) {
+    culoareComuna[i].style.color = "#bad1ff";
+}
+
+    const nodeList = document.querySelectorAll(".cuprinsCursuriToate");
+for (i = 0; i < nodeList.length; i++) {
+  nodeList[i].style.color = "white";
+}
+
+    } else {
+        arata.style.display = 'inline-block';
+        arata.style.display = 'inline';
+
+        document.getElementById("changeSite").style.background = "linear-gradient( to left, rgb(8,2,12) 10%, rgba(255, 255, 255, 0) 100%)";
+            document.getElementById("rotundDayNight").style.backgroundImage = "url('images/luna6.jpg')";
+            document.getElementById("primulTextHire").style.backgroundImage = "url('images/HIRE/dots2.jpg')";
+            document.getElementById("textNight").style.display = "inline";
+            document.getElementById("textDay").style.display = "none";
+            document.getElementById("rotundDayNight").style.animation = "cercSpreStanga .6s  forwards";
+            document.getElementById("rotundDayNight").style.boxShadow = "0 0 12px black";
+            document.getElementById("changeSite").style.borderColor = "grey";
+            document.getElementById("textDoiHire").style.color = "rgb(58, 58, 184)"; 
+            document.getElementById("perfectDay").style.color = "black";
+            document.getElementById("titluTextAboutMe").style.cssText = " color : #4d4d4d; text-shadow: 1px 1px 3px white";
+
+        document.getElementById("profilWrapper").style.backgroundColor = "#ececec";
+    // document.getElementById("bottomContainer").style.backgroundImage = "linear-gradient(to bottom, transparent 5%, whitesmoke 90%)";
+        document.getElementById("imagineReactOglindaObturator").style.backgroundImage = "linear-gradient(to bottom, rgba(169,208,113,0) 0%,  whitesmoke 30%)";
+
+        const culoareComuna = document.querySelectorAll(".culoareComunaTexte");
+for (i = 0; i < culoareComuna.length; i++) {
+    culoareComuna[i].style.color = "rgb(30, 30, 83)";
+}
+
+        const nodeList = document.querySelectorAll(".cuprinsCursuriToate");
+for (i = 0; i < nodeList.length; i++) {
+  nodeList[i].style.color = "black";
+}
+
+    }
+};
+
+// se schimba culoarea la p text la zi si noapte
+
+function changeDay() {
+    //   schimba culoarea la texte lucrari
+  var textDevices = document.getElementById("projectsContainer").querySelectorAll(".textDevices");
+  var i;
+  for (i = 0; i < textDevices.length; i++) {
+    textDevices[i].style.color = "black";
+  }
+
+  //   schimba culoarea la titluri lucrari
+var titluDevices = document.getElementById("projectsContainer").querySelectorAll("#titluDevices"); 
+  var i;
+  for (i = 0; i < titluDevices.length; i++) {
+    titluDevices[i].style.color = "#3d5c99";
+    titluDevices[i].style.textShadow = "1px 1px 3px black";
+  }
+
+     //   schimba culoarea la texte about me
+     var textAboutMe = document.getElementById("wrapperAboutMe").querySelectorAll(".textAboutMe");
+  var i;
+  for (i = 0; i < textAboutMe.length; i++) {
+    textAboutMe[i].style.color = "black";  
+    textAboutMe[i].style.textShadow = "0px 0px 2px white";
+    textAboutMe[i].style.background = "linear-gradient(to right,transparent 0%, #f6f6f6 35%,  #f6f6f6 65%, transparent 100%)";
+  }
+
+   //   schimba culoarea la texte aptitudini
+  var textAptitudin = document.getElementById("wrapperAptitudini").querySelectorAll(".textAptitudini");
+  var i;
+  for (i = 0; i < textAptitudin.length; i++) {
+    textAptitudin[i].style.color = "black"; 
+  }
+
+     //   schimba culoarea la texte software
+     var texteSoftware = document.getElementById("wrapperAptitudini").querySelectorAll(".texteSoftware");
+  var i;
+  for (i = 0; i < texteSoftware.length; i++) {
+    texteSoftware[i].style.color = "rgb(108, 183, 248)"; 
+  }
+
+       //   schimba culoarea la texte learning
+ var textCourses = document.getElementById("containerCourses").querySelectorAll(".textCourses");
+  var i;
+  for (i = 0; i < textCourses.length; i++) {
+    textCourses[i].style.color = "black"; 
+  } 
+
+  var span = document.getElementById("wrapperAptitudini").querySelectorAll(".targetJava"); 
+  var i;
+  for (i = 0; i < span.length; i++) {
+    span[i].style.color = "black";
+  }
+
+  
+  //   schimba culoarea texte HIRE
+  var span = document.getElementById("hireWrapper").querySelectorAll(".bindTexteHire"); 
+  var i;
+  for (i = 0; i < span.length; i++) {
+    span[i].style.color = "black";
+  }
+
+    //   schimba culoarea texte contact HIRE
+    var span = document.getElementById("hireWrapper").querySelectorAll(".texteHireContact"); 
+  var i;
+  for (i = 0; i < span.length; i++) {
+    span[i].style.color = "rgb(35, 35, 78)";
+  }
+      //   schimba culoarea texte download CV
+      var span = document.getElementById("downloadWrapper").querySelectorAll(".bindTexteHire"); 
+  var i;
+  for (i = 0; i < span.length; i++) {
+    span[i].style.color = "black";
+  }
+  
+        //   schimba culoarea texte contact HIRE
+        var spanDoi = document.getElementById("textSiContactHire").querySelectorAll(" .textNumeAdrese"); 
+  var i;
+  for (i = 0; i < spanDoi.length; i++) {
+    spanDoi[i].style.color = "blue";
+  }
+
+}
+
+function changeNight() {
+  var textDevices = document.getElementById("projectsContainer").querySelectorAll(".textDevices");
+  var i;
+  for (i = 0; i < textDevices.length; i++) {
+    textDevices[i].style.color = "rgb(182, 213, 241)";
+  }
+  var titluDevices = document.getElementById("projectsContainer").querySelectorAll("#titluDevices"); 
+  var i;
+  for (i = 0; i < titluDevices.length; i++) {
+    titluDevices[i].style.color = "rgb(108, 183, 248)";
+    titluDevices[i].style.textShadow = "2px 0px 6px #0a0a0a";
+  }
+
+  var textAptitudin = document.getElementById("wrapperAptitudini").querySelectorAll(".textAptitudini");
+  var i;
+  for (i = 0; i < textAptitudin.length; i++) {
+    textAptitudin[i].style.color = "rgb(182, 213, 241)";
+  }
+
+       //   schimba culoarea la texte about me
+       var textAboutMe = document.getElementById("wrapperAboutMe").querySelectorAll(".textAboutMe");
+  var i;
+  for (i = 0; i < textAboutMe.length; i++) {
+    textAboutMe[i].style.color = "white";  
+    textAboutMe[i].style.textShadow = "1px 1px 3px black";
+    textAboutMe[i].style.background = "linear-gradient(to right,transparent 0%, #595959 35%,  #595959 65%, transparent 100%)";
+  }
+
+     //   schimba culoarea la texte software
+     var texteSoftware = document.getElementById("wrapperAptitudini").querySelectorAll(".texteSoftware");
+  var i;
+  for (i = 0; i < texteSoftware.length; i++) {
+    texteSoftware[i].style.color = "#bad1ff"; 
+  }
+
+  var span = document.getElementById("wrapperAptitudini").querySelectorAll(".targetJava"); 
+  var i;
+  for (i = 0; i < span.length; i++) {
+    span[i].style.color = "rgb(86, 200, 245)";
+  } 
+
+  var textCourses = document.getElementById("containerCourses").querySelectorAll(".textCourses");
+  var i;
+  for (i = 0; i < textCourses.length; i++) {
+    textCourses[i].style.color = "rgb(182, 213, 241)"; 
+  }
+
+//   schimba culoarea texte HIRE
+  var span = document.getElementById("hireWrapper").querySelectorAll(".bindTexteHire"); 
+  var i;
+  for (i = 0; i < span.length; i++) {
+    span[i].style.color = "rgb(207, 244, 247)";
+  } 
+
+      //   schimba culoarea text contact HIRE
+      var span = document.getElementById("hireWrapper").querySelectorAll(".texteHireContact"); 
+  var i;
+  for (i = 0; i < span.length; i++) {
+    span[i].style.color = "rgb(125, 190, 247)";
+  }
+
+        //   schimba culoarea texte download CV
+        var span = document.getElementById("downloadWrapper").querySelectorAll(".bindTexteHire"); 
+  var i;
+  for (i = 0; i < span.length; i++) {
+    span[i].style.color = "white";
+  }
+
+      //   schimba culoarea texte contact HIRE
+      var spanDoi = document.getElementById("textSiContactHire").querySelectorAll(" .textNumeAdrese"); 
+  var i;
+  for (i = 0; i < spanDoi.length; i++) {
+    spanDoi[i].style.color = "rgb(207, 244, 247)";
+  }
+
+}
+
+// document.getElementById("projectReact").addEventListener("click", function () {
+//     document.getElementById("profilWrapper").style.backgroundColor = "whitesmoke";
+//     document.getElementById("bottomContainer").style.backgroundImage = "linear-gradient(to top, whitesmoke 30% , transparent 100%)";
+
+// });
+
+
+function salt_aboutMe() {
+				document.getElementById('titluTextAboutMe').scrollIntoView();
+			}
+
+        // jump to HIRE ME  from CONTACT navbar click
+            function salt_contact() {
+				document.getElementById('hireWrapper').scrollIntoView();
+			}
+            function salt_documentation() {
+				document.getElementById('containerCourses').scrollIntoView();
+			}
+            // jumpt to the projects from navbar dropmenu
+            function salt_react() {
+				document.getElementById('proiectReact').scrollIntoView();
+			}
+            function salt_picturi() {
+                document.getElementById('proiectPicturi').scrollIntoView();
+            }
+            function salt_commerce() {
+                document.getElementById('proiectCommerce').scrollIntoView();
+            }
+            function salt_culorile() {
+                document.getElementById('proiectColors').scrollIntoView();
+            }
+            function salt_model() {
+                document.getElementById('proiectModel').scrollIntoView();
+            }
+            function salt_cv() {
+                document.getElementById('proiectCV').scrollIntoView();
+            }
+
+            // salt spre abilitati
+            function salt_abilities() {
+                document.getElementById('titluAbilitati').scrollIntoView();
+            } 
+            
+                // salt back top
+                function salt_top() {
+                document.getElementById('profilWrapper').scrollIntoView();
+            } 
+
+            // get mounth - day- year at HIRE ME
+            var today = new Date();
+
+var date ="The perfect day:" + ' '+ today.getDate()+ '-'+(today.getMonth()+1)+'-'+ today.getFullYear()+ ", to";
+
+document.getElementById("perfectDay").innerHTML = date;
+
+
+// Functii pentru animatii rulare imagine device-uri
+
+// animatii proiect Culorile
+
+document.getElementById("imagineLaptopCulorile").onmouseenter = function() {mouseOverLaptopCulorile()};
+function mouseOverLaptopCulorile() {
+    document.getElementById("childLaptopColors").style.animation = "culorileLaptopAnimation 15s linear infinite ";
+}
+
+document.getElementById("imagineLaptopCulorile").onmouseleave = function() {mouseOutLaptopCulorile()};
+function mouseOutLaptopCulorile() {
+    document.getElementById("childLaptopColors").style.animation = "paused";
+}
+
+document.getElementById("imagineMonitorCulorile").onmouseenter = function() {mouseOverMonitorCulorile()};
+function mouseOverMonitorCulorile() {
+    document.getElementById("childMonitorColors").style.animation = "culorileMonitorAnimation 10s linear infinite ";
+}
+
+document.getElementById("imagineMonitorCulorile").onmouseleave = function() {mouseOutMonitorCulorile()};
+function mouseOutMonitorCulorile() {
+    document.getElementById("childMonitorColors").style.animation = "paused";
+}
+
+
+document.getElementById("imagineLaptopCulorile").onmouseenter = function() {mouseOverLaptopCulorile()};
+function mouseOverLaptopCulorile() {
+    document.getElementById("childLaptopColors").style.animation = "culorileLaptopAnimation 15s linear infinite ";
+}
+
+document.getElementById("imagineLaptopCulorile").onmouseleave = function() {mouseOutLaptopCulorile()};
+function mouseOutLaptopCulorile() {
+    document.getElementById("childLaptopColors").style.animation = "paused";
+}
+
+
+document.getElementById("imagineTelefonCulorile").onmouseenter = function() {mouseOverTelefonCulorile()};
+function mouseOverTelefonCulorile() {
+    document.getElementById("childTelefonColors").style.animation = "culorileTelefonAnimation 10s linear infinite ";
+}
+
+document.getElementById("imagineTelefonCulorile").onmouseleave = function() {mouseOutTelefonCulorile()};
+function mouseOutTelefonCulorile() {
+    document.getElementById("childTelefonColors").style.animation = "paused";
+}
+
+
+document.getElementById("imagineTabletaCulorile").onmouseenter = function() {mouseOverTabletaCulorile()};
+function mouseOverTabletaCulorile() {
+    document.getElementById("childTabletaColors").style.animation = "culorileTabletaAnimation 10s linear infinite ";
+}
+
+document.getElementById("imagineTabletaCulorile").onmouseleave = function() {mouseOutTabletaCulorile()};
+function mouseOutTabletaCulorile() {
+    document.getElementById("childTabletaColors").style.animation = "paused";
+}
+
+
+// animatii proiect Picturi
+
+document.getElementById("imagineLaptopPicturi").onmouseenter = function() {mouseOverLaptopPicturi()};
+function mouseOverLaptopPicturi() {
+    document.getElementById("childLaptopPicturi").style.animation = "picturiLaptopAnimation 15s linear infinite ";
+}
+
+document.getElementById("imagineLaptopPicturi").onmouseleave = function() {mouseOutLaptopPicturi()};
+function mouseOutLaptopPicturi() {
+    document.getElementById("childLaptopPicturi").style.animation = "paused";
+}
+
+document.getElementById("imagineMonitorPicturi").onmouseenter = function() {mouseOverMonitorPicturi()};
+function mouseOverMonitorPicturi() {
+    document.getElementById("childMonitorPicturi").style.animation = "picturiMonitorAnimation 10s linear infinite ";
+}
+
+document.getElementById("imagineMonitorPicturi").onmouseleave = function() {mouseOutMonitorPicturi()};
+function mouseOutMonitorPicturi() {
+    document.getElementById("childMonitorPicturi").style.animation = "paused";
+}
+
+
+document.getElementById("imagineLaptopPicturi").onmouseenter = function() {mouseOverLaptopPicturi()};
+function mouseOverLaptopPicturi() {
+    document.getElementById("childLaptopPicturi").style.animation = "picturiLaptopAnimation 15s linear infinite ";
+}
+
+document.getElementById("imagineLaptopPicturi").onmouseleave = function() {mouseOutLaptopPicturi()};
+function mouseOutLaptopPicturi() {
+    document.getElementById("childLaptopPicturi").style.animation = "paused";
+}
+
+
+document.getElementById("imagineTelefonPicturi").onmouseenter = function() {mouseOverTelefonPicturi()};
+function mouseOverTelefonPicturi() {
+    document.getElementById("childTelefonPicturi").style.animation = "picturiTelefonAnimation 10s linear infinite ";
+}
+
+document.getElementById("imagineTelefonPicturi").onmouseleave = function() {mouseOutTelefonPicturi()};
+function mouseOutTelefonPicturi() {
+    document.getElementById("childTelefonPicturi").style.animation = "paused";
+}
+
+
+document.getElementById("imagineTabletaPicturi").onmouseenter = function() {mouseOverTabletaPicturi()};
+function mouseOverTabletaPicturi() {
+    document.getElementById("childTabletaPicturi").style.animation = "picturiTabletaAnimation 10s linear infinite ";
+}
+
+document.getElementById("imagineTabletaPicturi").onmouseleave = function() {mouseOutTabletaPicturi()};
+function mouseOutTabletaPicturi() {
+    document.getElementById("childTabletaPicturi").style.animation = "paused";
+}
+// la click pe cursuri, apar lectiile cursului respectiv
+
+document.getElementById("coursesUnu").addEventListener("click", function () {
+    let height = document.getElementById('cuprinsCursuriUnu');
+    if (height.style.height === '100%') {
+        height.style.height = '0px';
+        document.getElementById("plusUnu").innerHTML = "+";
+        document.getElementById("cuprinsCursuriUnu").style.position = "absolute";
+     
+    } else {
+        // height.style.height == '100%';
+        height.style.height = '100%';
+        document.getElementById("cuprinsCursuriUnu").style.position = "relative";
+        document.getElementById("plusUnu").innerHTML = "‒";
+    }
+})
+
+// document.getElementById("coursesDoi").addEventListener("click", function () {
+//     let height = document.getElementById('cuprinsCursuriDoi');
+//     if (height.style.height === '100%') {
+//         height.style.height = '0px';
+//         document.getElementById("plusDoi").innerHTML = "+";
+//         document.getElementById("cuprinsCursuriDoi").style.position = "absolute";
+     
+//     } else {
+//         // height.style.height == '100%';
+//         height.style.height = '100%';
+//         document.getElementById("plusDoi").innerHTML = "‒";
+//         document.getElementById("cuprinsCursuriDoi").style.position = "relative";
+//     }
+// })
+document.getElementById("coursesDoi").addEventListener("click", function () {
+    let height = document.getElementById('cuprinsCursuriDoi');
+    if (height.style.height === '100%') {
+        height.style.height = '0px';
+        document.getElementById("plusDoi").innerHTML = "+";
+        document.getElementById("cuprinsCursuriDoi").style.position = "absolute";
+     
+    }  else {
+        // height.style.height == '100%';
+        height.style.height = '100%';
+        document.getElementById("plusDoi").innerHTML = "‒";
+        document.getElementById("cuprinsCursuriDoi").style.position = "relative";
+    }
+})
+
+document.getElementById("coursesTrei").addEventListener("click", function () {
+    let height = document.getElementById('cuprinsCursuriTrei');
+    if (height.style.height === '100%') {
+        height.style.height = '0px';
+        document.getElementById("plusTrei").innerHTML = "+";
+        document.getElementById("cuprinsCursuriTrei").style.position = "absolute";
+     
+    }  else {
+        // height.style.height == '100%';
+        height.style.height = '100%';
+        document.getElementById("plusTrei").innerHTML = "‒";
+        document.getElementById("cuprinsCursuriTrei").style.position = "relative";
+    }
+})
+
+document.getElementById("coursesPatru").addEventListener("click", function () {
+    let height = document.getElementById('cuprinsCursuriPatru');
+    if (height.style.height === '100%') {
+        height.style.height = '0px';
+        document.getElementById("plusPatru").innerHTML = "+";
+        document.getElementById("cuprinsCursuriPatru").style.position = "absolute";
+     
+    }  else {
+        // height.style.height == '100%';
+        height.style.height = '100%';
+        document.getElementById("plusPatru").innerHTML = "‒";
+        document.getElementById("cuprinsCursuriPatru").style.position = "relative";
+    }
+})
+
+document.getElementById("coursesCinci").addEventListener("click", function () {
+    let height = document.getElementById('cuprinsCursuriCinci');
+    if (height.style.height === '100%') {
+        height.style.height = '0px';
+        document.getElementById("plusCinci").innerHTML = "+";
+        document.getElementById("cuprinsCursuriCinci").style.position = "absolute";
+     
+    }  else {
+        // height.style.height == '100%';
+        height.style.height = '100%';
+        document.getElementById("plusCinci").innerHTML = "‒";
+        document.getElementById("cuprinsCursuriCinci").style.position = "relative";
+    }
+})
+
+document.getElementById("coursesSase").addEventListener("click", function () {
+    let height = document.getElementById('cuprinsCursuriSase');
+    if (height.style.height === '100%') {
+        height.style.height = '0px';
+        document.getElementById("plusSase").innerHTML = "+";
+        document.getElementById("cuprinsCursuriSase").style.position = "absolute";
+     
+    }  else {
+        // height.style.height == '100%';
+        height.style.height = '100%';
+        document.getElementById("plusSase").innerHTML = "‒";
+        document.getElementById("cuprinsCursuriSase").style.position = "relative";
+    }
+})
+
+        </script>
+    </body>
+    </html>
+
